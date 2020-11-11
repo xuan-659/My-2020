@@ -1,0 +1,259 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.title1{
+  position: relative;
+  margin-top:28vh ;
+  -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+  
+}
+.phto{
+    width: 100vw;
+    height: 60vh;
+    margin-top: 5vh;
+    border: aqua 1px solid;
+    display: flex;
+    overflow: hidden;
+    cursor: grab;
+    visibility: inherit;
+    opacity: 1;
+}
+.phto1{
+    width: 100vw;
+    height: 60vh;
+    background-color: cadetblue;
+    display: flex;
+    flex-shrink: 0;
+    transition: 1s;
+    position: relative;
+    padding-left: 5vw;
+}
+.phto2{
+    width: 100vw;
+    height: 60vh;
+    background-color: crimson;
+    display: flex;
+    flex-shrink: 0;
+    transition: 1s;
+    position: relative;
+}
+.phto3{
+    width: 100vw;
+    height: 60vh;
+    background-color: brown;
+    display: flex;
+    flex-shrink: 0;
+    position: relative;
+}
+.phto4{
+    width: 100vw;
+    height: 60vh;
+    background-color: chartreuse;
+    display: flex;
+    flex-shrink: 0;
+    position: relative;
+}
+.phto5{
+    width: 100vw;
+    height: 60vh;
+    background-color: cornsilk;
+    display: flex;
+    flex-shrink: 0;
+    position: relative;
+}
+.phto6{
+    width: 100vw;
+    height: 60vh;
+   background-color: cadetblue;
+    display: flex;
+    flex-shrink: 0;
+    position: relative;
+}
+.phtot{
+    width: 25vw;
+    height: 40vh;
+    margin-top: 18vh;
+    /* border: tan solid 1px; */
+    display: flex;
+}
+.phtot2{
+    width: 25vw;
+    height: 40vh;
+    margin-top: 1vh;
+    /* border: tan solid 1px; */
+    display: flex;
+}
+.pt1{
+    width: 220px;
+    height: 220px;
+    /* border: tomato solid 3px; */
+    border-radius: 74% 26% 54% 46% / 61% 34% 66% 39% ;
+    margin-left: 2vw;
+    margin-top: 5vh;
+}
+.pt2{
+    width: 220px;
+    height: 220px;
+    /* border: #16a085 solid 3px; */
+    border-radius: 26% 74% 46% 54% /34% 61% 39% 66% ;
+    margin-left: 2vw;
+    margin-top: 1vh;
+}
+.ph1{
+    width: 100px;
+    height: 80px;
+    /* border: teal 1px solid; */
+    margin-left: 18vw;
+    margin-top: 15vh;
+    font-size: 1rem;
+    font-family: sans-serif;
+    text-align: center;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+.ph2{
+    width: 100px;
+    height: 80px;
+    /* border: teal 1px solid; */
+    margin-left: 15vw;
+    margin-top: 35vh;
+    font-size: 1rem;
+    font-family: sans-serif;
+    text-align: center;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+.mask{
+            width: 100%;
+            -webkit-mask-image: linear-gradient(90deg,transparent,transparent 7%,#000 18%,#000);
+            mask-image: linear-gradient(90deg,transparent,transparent 7%,#000 18%,#000);
+           -webkit-mask-size: 101%;
+            mask-size: 101%;
+            position: relative;
+            padding-left: 2.4rem;
+        }
+.phtot .back1{
+    background-image: url("1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.phtot2 .back2{
+    background-image: url("2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.phtot .back3{
+    background-image: url("3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.phtot2 .back4{
+   
+    background-image: url("4.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.phtot .back5{
+   
+   background-image: url("5.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+.phtot2 .back6{
+   
+   background-image: url("6.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+.phtot .back7{
+   
+   background-image: url("7.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+.phtot2 .back8{
+   
+   background-image: url("8.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+.phtot .back9{
+   
+   background-image: url("9.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+.phtot2 .back10{
+   
+   background-image: url("10.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+.phtot .back11{
+   
+   background-image: url("11.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+.phtot2 .back12{
+   
+   background-image: url("12.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+.phtot .back13{
+   
+   background-image: url("13.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+.phtot2 .back14{
+   
+   background-image: url("14.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+.phtot .back15{
+   
+   background-image: url("15.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+.phtot2 .back16{
+   
+   background-image: url("16.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+.phtot .back17{
+   
+   background-image: url("17.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+.phtot2 .back18{
+   
+   background-image: url("18.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+.phtot .back19{
+   
+   background-image: url("19.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+.phtot2 .back20{
+   
+   background-image: url("20.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+}
