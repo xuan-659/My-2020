@@ -1,0 +1,65 @@
+html,
+body {
+  margin: 0;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* background-color: #d9cebc; */
+  font-family: "Clearface ITC Bold";
+  color: #ffffff;
+  overflow: hidden;
+  text-rendering: auto;
+  background-image: url(../images/white_pattern.png);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.home_preloader {
+  position: absolute;
+  opacity: 1;
+  height: 400px;
+  width: 100px;
+  overflow: hidden;
+  left: 648.5px;
+  top: 198.5px;
+  cursor: pointer;
+}
+
+.home_enter {
+  font-size: 24px;
+  position: absolute;
+  color: rgb(17, 56, 51);
+  top: 285px;
+  left: 20px;
+  white-space: nowrap;
+  z-index: 10;
+  overflow: visible;
+}
+
+.home_entrance {
+  font-size: 16px;
+  position: absolute;
+  color: rgb(17, 56, 51);
+  top: 315px;
+  left: 0px;
+  width: 104px;
+  text-align: center;
+}
+
+.preloader_tree {
+  position: absolute;
+  left: -0px;
+  /* 图片不可选中 */
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+}
