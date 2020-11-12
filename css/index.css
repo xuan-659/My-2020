@@ -1,10 +1,10 @@
-.page1,
-.page2,
-.page3,
-.page4,
-.page5,
-.page6 {
-  width: 100vw;
+#sec-1,
+#sec-2,
+#sec-3,
+#sec-4,
+#sec-5,
+#sec-6 {
+  width: 100%;
   height: 100vh;
   margin-top: 10px;
   background-color: skyblue;
