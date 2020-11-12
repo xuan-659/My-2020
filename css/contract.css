@@ -1,0 +1,8 @@
+.contract-box {
+  display: flex;
+  align-items: flex-start;
+  background: red;
+  height: 190vh;
+  overflow: hidden;
+  justify-content: flex-start;
+}
