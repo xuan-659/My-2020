@@ -9,6 +9,9 @@ function preloader() {
     tree_time -= 100;
     if (tree_time < -1400) window.clearInterval(timer);
   }, 130);
+  tree.addEventListener('dragstast',function(){
+    return false;
+  })
 }
 
 if (home_entrance) {

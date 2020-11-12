@@ -1,26 +1,63 @@
-@charset "utf-8"; 
-a,body,button,dd,div,dt,figcaption,figure,footer,h1,h2,h3,h4,h5,h6,header,html,img,input,li,ol,option,p,section,select,span,td,textarea,th,thead,tr,ul{
-	margin:0;
-	padding:0;
-	box-sizing:border-box;
-	-webkit-box-sizing:border-box}
-body{
-	font-size:14px;
-	height:100vh;
-	width:100%
+@charset "utf-8";
+a,
+body,
+button,
+dd,
+div,
+dt,
+figcaption,
+figure,
+footer,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+html,
+img,
+input,
+li,
+ol,
+option,
+p,
+section,
+select,
+span,
+td,
+textarea,
+th,
+thead,
+tr,
+ul {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
-a{
-	text-decoration:none
+body {
+  font-size: 14px;
+  height: 100vh;
+  width: 100%;
 }
-li,ol,ul{
-	list-style:none
+a {
+  text-decoration: none;
 }
-button,input,textarea{
-	outline:0;
-	border:none;
-	background-color:transparent;
-	resize:none
+li,
+ol,
+ul {
+  list-style: none;
 }
-img{
-	border:none;outline:0
+button,
+input,
+textarea {
+  outline: 0;
+  border: none;
+  background-color: transparent;
+  resize: none;
+}
+img {
+  border: none;
+  outline: 0;
 }
