@@ -2,6 +2,10 @@ html,
 body {
   scroll-behavior: smooth;
 }
+@font-face {
+  font-family: "kan";
+  src: url(../fonts/锐字云字库楷体GB.ttf);
+}
 
 /* 清除浮动 */
 .clearfix:after {
@@ -128,7 +132,7 @@ body {
 #sec-6 {
   width: 100%;
   height: 100vh;
-  background-color: skyblue;
+  /* background-color: skyblue; */
   /* opacity: 0.5; */
 }
 
@@ -389,3 +393,119 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+/* 第三页 */
+.sec5{
+  /* background-image: url(../images/我的2020.png); */
+ background-size: 100% auto;
+  
+  background-repeat:no-repeat;
+  background-position: bottom;
+  background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+}
+/* .school-img{
+  width:100%;
+ 
+  position: relative;
+  top: 0;
+} */
+.sec-5-box{
+  width:80%;
+  height:70%;
+  margin:0 auto;
+}
+.sec-5-box-left{
+  width:50%;
+  height:70%;
+  background-color: #ff6a8502;
+  float:left;
+  border:1px solid transparent;
+}
+.sec-5-box-right{
+  width:50%;
+  height:70%;
+  background-color: #b97bfc00;
+ float: right;
+ border:1px solid transparent;
+}
+.sec-5-box-left h1{
+  display: block;
+  background-color: rgba(240, 248, 255, 0);
+  margin-top: 10vh;
+  font-size: 50px;
+  font-family: "宋体";
+}
+.container{
+  width:153px;
+  /* height:100%; */
+  background-color: rgba(255, 99, 71, 0.226);
+  border: 2px solid rgba(255, 0, 0, 0);
+  margin-top: 5vh;
+  margin-left: 20%;
+  display: inline-block;
+}
+
+.number_box {
+   display: inline-block;
+   height: 96px;
+   width: 72px;
+   margin: 0 auto;
+   border: 1px solid #eeeeee;
+   border-radius: 2px;
+   box-sizing: border-box;
+   overflow: hidden;
+   background-color: #0f0f0f2f;
+   margin: 0 auto; 
+}
+
+.digitial_item {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 96px;
+
+}
+
+.digitial_item span {
+   color: #f0f0f5;
+   line-height: 1;
+   font-size: 64px;
+   text-shadow: 0 0 5px rgba(255, 255, 255, .5);
+}
+.time{
+  font-size: 20px;
+  font-family: monospace;
+}
+/* .sec-5-box-right img{
+  width:50%;
+  height:45%;
+  background-color: rgba(64, 224, 208, 0);
+  float: right;
+  margin-top: 5vh;
+} */
+.sec-5-box-left-text{
+  margin-top: 10vh;
+  width:65%;
+  margin-left: 10%;
+  font-size: 20px;
+}
+.sec-5-box-right-text{
+  margin-top: 15vh;
+  width:55%;
+  margin-left: 15%;
+  font-size: 20px;
+}
+.submit-work{
+  width:25%;
+  height:5vh;
+  background-color: rgba(91, 50, 205, 0.055);
+  margin-top: 10vh;
+  margin-left: 15%;
+  text-align: center;
+  border:2px solid rgba(250, 245, 245, 0.219);
+  border-radius: 5px;
+}
+ .school-img{
+   width:100%;
+  margin-top: 0;
+ }

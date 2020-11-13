@@ -124,5 +124,148 @@ window.onload = function () {
 
 
 //page5.js
+let step                =       0;
+let step2               =       0;
+const stepMap           =       new Map();
+const circleMap         =       new Map();
+const numberList        =       document.querySelectorAll('.digitial_list');
+const baseHeight        =       96;
+const length            =       2;
+const maxCircle         =       10;
+const baseTime          =       500;
+const totalTime         =       500;  // 总时长
+var endNumber         =  ''  ;
+// var min                 =        0;
+// var sec                 =        0;
+let endNumberList       =       [];
+let circleNum           =       0;      // 总圈数(暂定~)
+var d                   = 0;
+
+function init() {
+    numberList.forEach((item, index) => {
+        stepMap.set(index, 0);
+        circleMap.set(index, 0);
+    });
+    endNumberList = endNumber.toString().split('');
+}
+
+
+//倒计时
+function getDistanceSpecifiedTime() {
+    // 指定日期和时间
+    var EndTime = new Date(2021,0,1);
+    // 当前系统时间
+    var NowTime = new Date();
+    var t = EndTime.getTime() - NowTime.getTime();
+     d = Math.floor(t / 1000 / 60 / 60 / 24);
+    var h = Math.floor(t / 1000 / 60 / 60 % 24);
+    var m = Math.floor(t / 1000 / 60 % 60);
+    var s = Math.floor(t / 1000 % 60);
+   
+     endNumber         =   ""+d   ;
+     document.querySelector("#hour").innerHTML=h;     
+
+     document.querySelector("#min").innerHTML=m;
+     document.querySelector("#sec").innerHTML=s;     
+
+
+}
+function getDay(){
+  // 指定日期和时间
+  var EndTime = new Date(2021,0,1);
+  // 当前系统时间
+  var NowTime = new Date();
+  var t = EndTime.getTime() - NowTime.getTime();
+   d = Math.floor(t / 1000 / 60 / 60 / 24);
+   endNumber         =   ""+d ;
+}
+var numberBoxFlag=0;
+getDay();
+ setInterval("getDistanceSpecifiedTime()",500);
+//  if(numberBoxFlag===0){
+ 
+// function y(){
+//  if(getElementTop(sec[4])<=window.scrollY&&getElementTop(sec[5])>=window.scrollY)
+//  {
+//     // numberBoxFlag=1;
+// //  getDay();
+// alert("hhhhhhhh");
+//  }
+// //  else{
+// //    endNumber='';
+// //  }
+// }
+
+// var qw = document.querySelector('.submit-work');
+// qs.addEventListener('click',function(){
+  // startAnimation();
+  // getDay();
+  // console.log(1);
+// });
+
+
+// y();
+// setInterval("y()",3000);
+
+
+// getDistanceSpecifiedTime()
+
+// $(window).scroll2(function (){
+//   if ($(window).scrollTop()>=) {
+//       getDay();
+//   }
+//   else{
+//       document.querySelector(".image-block").style.opacity=0;
+//   }
+// });
+
+
+
+
+function scroll(index, scrollBox, maxLength, gapTime, circle, stopNum, timer) {
+    let currentStep = stepMap.get(index);
+    let newStep = currentStep;
+    let currentCircle = circleMap.get(index);
+    const currentNumber = parseInt(scrollBox.children[currentStep].innerText);
+    scrollBox.style.transform = `translate(0, -${currentStep * baseHeight}px)`;
+    if(currentCircle === circle - 1 && currentNumber === stopNum) {
+        clearInterval(timer);
+    }
+    if(currentStep === maxLength - 1) {
+        stepMap.set(index, 0);
+        circleMap.set(index, ++currentCircle);
+        setTimeout(function() {
+            scrollBox.style.transitionProperty = 'none';
+            scrollBox.style.transform = `translate(0, 0)`;
+        }, gapTime);
+    } else {
+        scrollBox.style.transition = `all ${gapTime / 1000}s`;
+        newStep++;
+        stepMap.set(index, newStep);
+    }
+}
+
+function startAnimation() {
+    numberList.forEach((scrollBox, index) => {
+        const childrenLen = scrollBox.children.length;
+        const circle = Math.pow(2, index);
+        const gapTime = baseTime / circle;
+        const stopNum = +endNumberList[index];
+        const timer = setInterval(() => { scroll(
+            index, 
+            scrollBox, 
+            childrenLen, 
+            gapTime,
+            circle,
+            stopNum,
+            timer
+        )}, gapTime);
+    })
+}
+
+init();
+startAnimation();
+
+
 
 //page6.js
