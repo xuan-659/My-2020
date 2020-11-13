@@ -1,5 +1,5 @@
 var tree = document.querySelector(".preloader_tree");
-var home_entry = document.querySelector(".home_entry");
+var home_enter = document.querySelector(".home_enter");
 var home_entrance = document.querySelector(".home_entrance");
 
 function preloader() {
@@ -7,15 +7,19 @@ function preloader() {
   let timer = setInterval(function () {
     tree.style.left = tree_time + "px";
     tree_time -= 100;
-    if (tree_time < -1400) window.clearInterval(timer);
+    if (tree_time < -1400) 
+    window.clearInterval(timer);
   }, 130);
-  tree.addEventListener('dragstast',function(){
-    return false;
+  tree.addEventListener("mousedown",function(e){
+    e.preventDefault();
   })
 }
-
-if (home_entrance) {
+if (home_entrance&&home_enter) {
+  
   home_entrance.addEventListener("click", function () {
+    window.location.href = "index.html";
+  });
+  home_enter.addEventListener("click", function () {
     window.location.href = "index.html";
   });
 }

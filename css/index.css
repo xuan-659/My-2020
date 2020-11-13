@@ -1,4 +1,126 @@
-#sec-1,
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+/* 清除浮动 */
+.clearfix:after {
+  display: block;
+  clear: both;
+  content: "";
+  visibility: hidden;
+  height: 0;
+}
+.clearfix {
+  zoom: 1;
+}
+/* page1 css start */
+
+#sec-1 {
+  width: 100%;
+  height: 100vh;
+  /* url(../images/sec-1bg-transpant.png) */
+      background:url(../images/O2QxZ_h9yNqEn2N0DY1509695673.gif);
+  /* background-image:url(../images/sec-1bg-transpant.png);*/
+  background-size: 100% 100%;
+  background-position: -2px 0px; 
+}
+
+/* 左侧导航栏模块 */
+.navbar {
+  position: fixed;
+  top: 27vh;
+  left: 2.5vw;
+  width: 10px;
+  height: 51vh;
+  z-index:9999;
+}
+
+.little-dot {
+  height: 1px;
+  margin-left: 4px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 1px;
+  background-color: #ba7bfc;
+  border: 1px solid #ba7bfc;
+  border-radius: 50%;
+}
+
+.navbar-dot {
+  cursor: pointer;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  height: 12px;
+  width: 12px;
+  border: 2px solid #dda0dd;
+  border-radius: 50%;
+}
+
+.navbar-dot:hover {
+  transform: scale(1.2);
+  border: 2px solid #da70d6;
+  transition: all 0.5s;
+}
+
+.navbar .navbar-selected {
+  transform: scale(1.4);
+  margin-top: 2px;
+  margin-bottom: 2px;
+  border: 2px solid #da70d6;
+}
+
+.navbar-selected:after {
+  content: "";
+  margin: 1.1px;
+  display: table;
+  width: 6px;
+  height: 6px;
+  background: #ff6a86;
+  border-radius: 50%;
+}
+
+.header {
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 9998;
+  height: 70px;
+  background-color: black;
+}
+
+.header-content {
+  width: 80%;
+  margin: 0 10%;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+}
+
+.header-leftPart h1 {
+  color: #0b0d0e;
+  text-transform: uppercase;
+  font-family: "Varela Round", cursive;
+  height: 70px;
+  line-height: 95px;
+  font-weight: 900;
+  letter-spacing: 15px;
+  font-size: 2.5vw;
+  -webkit-transition: line-height 0.4s ease-in-out;
+  -moz-transition: line-height 0.4s ease-in-out;
+  -ms-transition: line-height 0.4s ease-in-out;
+  -o-transition: line-height 0.4s ease-in-out;
+  transition: line-height 0.4s ease-in-out;
+  transition-delay: 0.3s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* page1 css end */
+
 #sec-2,
 #sec-3,
 #sec-4,
@@ -6,10 +128,8 @@
 #sec-6 {
   width: 100%;
   height: 100vh;
-  margin-top: 10px;
   background-color: skyblue;
-  opacity: 0.5;
-  cursor: move;
+  /* opacity: 0.5; */
 }
 
 .h {
@@ -19,23 +139,7 @@
   background-color: springgreen;
 }
 
-.start-button {
-  font-family: "myFont";
-  font-size: 25px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  background-color: red;
-  transform: translateX(-50%);
-  transform: translateY(-50%);
-  cursor: default;
-}
-
 /* page4.css */
-body {
-  margin: 0;
-  padding: 0;
-}
 .title1 {
   position: relative;
   margin-top: 28vh;
@@ -284,99 +388,4 @@ body {
   background-image: url("../images/20.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-/* 1.css */
-.section3 {
-  width: 100%;
-  height: 350vh;
-  /* background-color: aqua; */
-  padding: 20vh 0;
-}
-* {
-  margin: 0;
-  padding: 0;
-}
-.scroll-container {
-  width: 100%;
-  height: 100%;
-
-  /* background-color: blanchedalmond; */
-}
-img {
-  width: 100%;
-  height: 100%;
-}
-.container-small {
-  width: 80%;
-  height: 100%;
-  margin: 0 auto;
-}
-.container-small h2 {
-  width: 100%;
-  height: 10vh;
-  /* background-color: rgb(126, 160, 95); */
-  margin: 0 auto;
-}
-
-.experience-item h5 {
-  /* background-color: crimson; */
-  width: 50%;
-  height: 5vh;
-}
-.item-text {
-  width: 50%;
-  height: auto;
-  word-wrap: break-word;
-  word-break: break-all;
-  overflow: hidden;
-}
-.desc-2 {
-  width: 100%;
-  height: 30vh;
-  /* background-color: cadetblue; */
-  margin: 0 auto;
-}
-.experience-item {
-  width: 100%;
-  height: 58vh;
-  margin: 0 auto;
-  display: flex;
-  /*justify-content: center; /* 水平居中 */
-  align-items: center; /* 垂直居中 */
-}
-.experience-item1 {
-  padding-left: 30%;
-}
-.image-wrap {
-  width: 25%;
-  height: 100%;
-  /* background-color: cornflowerblue; */
-  float: left;
-  margin-right: 5%;
-  border-radius: 50%;
-}
-
-/* div4.html内联样式 */
-.box-item {
-  position: relative;
-  display: inline-block;
-  width: 54px;
-  height: 82px;
-  /* 背景图片 */
-  background: url(../images/4.jpg) no-repeat center center;
-  background-size: 100% 100%;
-  font-size: 62px;
-  line-height: 82px;
-  text-align: center;
-  /* writing-mode: vertical-lr;
-  text-orientation: upright; */
-}
-.box-item {
-  overflow: hidden;
-}
-#Number {
-  transition: all 0.5s;
-  margin: 0 auto;
-  height: 82px;
 }
