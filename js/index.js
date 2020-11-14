@@ -1,4 +1,5 @@
-//page1.js
+
+//page1.js      
 var sec = new Array(
   document.querySelector("#sec-1"),
   document.querySelector("#sec-2"),
@@ -7,6 +8,104 @@ var sec = new Array(
   document.querySelector("#sec-5"),
   document.querySelector("#sec-6")
 );
+// 过场动画
+function none (pass){
+  // pass1.style.display="none";
+  // pass2.style.display="none";
+  pass.style.display="none";
+}
+var tnz=0;
+var ztn=document.getElementsByClassName("ztn")[0];
+var tn1=document.getElementsByClassName("tn")[0];
+var tn2=document.getElementsByClassName("tn")[1];
+var tn3=document.getElementsByClassName("tn")[2];
+var tn4=document.getElementsByClassName("tn")[3];
+// var pp1=document.getElementsByClassName("p1")[0];
+// var pp2=document.getElementsByClassName("p2")[0];
+var pp1=document.getElementById("pass1");
+var pp2=document.getElementById("pass2");
+var pp3=document.getElementsByClassName("pass3")[0];
+var pp4=document.getElementsByClassName("pass4")[0];
+var pp=document.getElementsByClassName("pass")[0];
+function openingAnimation(){
+ pp1.className="pass1 pp1";
+ pp2.className="pass2 pp2";
+ pp3.className="pass3 pp3";
+  pp4.className="pass4 pp4"
+// var pp=getComputedStyle(pp1,null);
+//     ppp=parseInt(pp.marginTop)
+//   console.log(ppp); 
+//  if(ppp<=-10)
+//  {
+//    pp3.className="pass3 pp3";
+//    pp4.className="pass4 pp4"
+//  }
+
+setTimeout("none(pp)",1000);
+
+}
+// ztn.addEventListener('click',function(){
+ setTimeout(openingAnimation,0);
+//   })
+
+                                                     //圆形进度条
+let angle = 5
+      let gap = 0
+      var scrolly=0
+      var sy=0;
+let left = document.getElementsByClassName('leftcircle')[0]
+let right = document.getElementsByClassName('rightcircle')[0]
+var Button=document.getElementsByClassName('add')[0]
+function getElementTop(element) {
+  var actualTop = element.offsetTop;
+  var current = element.offsetParent;
+
+  while (current !== null) {
+    actualTop += current.offsetTop;
+    current = current.offsetParent;
+  }
+
+  return actualTop;
+}
+     function circelStart(){
+    scrolly=window.scrollY-sy;
+    
+         if(scrolly>=0)
+         {angle+=scrolly*0.08;}
+         if(scrolly<0)
+         {angle+=scrolly*0.08;}
+    
+  if(angle > 180){
+    // 这里的gap就是每次累加的值
+    gap = angle - lastAngle
+  }
+  if(angle <= 180){
+  // 右转左不转
+    right.style.cssText = `transform: rotate(${-135 + angle}deg)`
+  }else if(angle <= 180 + gap) {
+    // 这里只会执行一次，设定的条件是 当前角度小于 180 + gap
+    right.style.cssText = `transform: rotate(${-135 + 180}deg)`
+  }else if(angle <= 360) {
+    // 右转且左转
+    right.style.cssText = `transform: rotate(${-135 + 180}deg)`
+    left.style.cssText = `transform: rotate(${-135 + angle - 180}deg)`
+  } else {
+    right.style.cssText = `transform: rotate(${-135 + 180}deg)`
+    left.style.cssText = `transform: rotate(${-135 + 180}deg)`
+  }
+  lastAngle = angle;
+  sy=window.scrollY;
+}
+function autoRoll() {
+     window.addEventListener("scroll",function(e){
+           
+            //使用setTimeout方法产生一个延时效果，是的每次滑动鼠标滑轮，只执行一次事件方法
+            setTimeout(circelStart(), 800);
+
+        });
+    }
+    autoRoll();
+
 
 var clickFlag = 0;
 // 获取元素距离页面顶端的距离
@@ -207,15 +306,21 @@ function scroll(index, scrollBox, maxLength, gapTime, circle, stopNum, timer) {
 }
 
 function startAnimation() {
-  numberList.forEach((scrollBox, index) => {
-    const childrenLen = scrollBox.children.length;
-    const circle = Math.pow(2, index);
-    const gapTime = baseTime / circle;
-    const stopNum = +endNumberList[index];
-    const timer = setInterval(() => {
-      scroll(index, scrollBox, childrenLen, gapTime, circle, stopNum, timer);
-    }, gapTime);
-  });
+    numberList.forEach((scrollBox, index) => {
+        const childrenLen = scrollBox.children.length;
+        const circle = Math.pow(2, index);
+        const gapTime = baseTime / circle;
+        const stopNum = endNumberList[index];
+        const timer = setInterval(() => { scroll(
+            index, 
+            scrollBox, 
+            childrenLen, 
+            gapTime,
+            circle,
+            stopNum,
+            timer
+        )}, gapTime);
+    })
 }
 
 var numberBoxFlag = true;
