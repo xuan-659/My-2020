@@ -298,13 +298,21 @@ animation:move2 3s infinite;
 
 #sec-2,
 #sec-3,
-#sec-4,
+
 #sec-5,
 #sec-6 {
   width: 100%;
   height: 100vh;
   /* background-color: skyblue; */
   /* opacity: 0.5; */
+}
+#sec-4{
+  width:100%;
+  height:310vh;
+  /* background-color: #ba7bfc; */
+}
+#sec-2,#sec-3,#sec-4,#sec-5,#sec-1{
+  margin-bottom: 5vh;
 }
 
 .h {
@@ -334,7 +342,7 @@ animation:move2 3s infinite;
 .sec-2-text2{
  display: flex;
  /* background-color: black; */
- height:60%;
+ height:55%;
 }
 .sec-2-text1-p{
   width:50%;
@@ -355,11 +363,64 @@ animation:move2 3s infinite;
   font-size: 30px;
   border-bottom: 1px dashed rgba(174, 159, 209, 0.719);
 }
- 
-  .sec-c-text2-3{
+ .sec-2-text2-1 h2{
+   margin-left: 20%;
+   font-size: 25px;
+ }
+  .sec-2-text2-3{
     width:50%;
     height:100%;
-    border:1px solid red;
+    /* border:1px solid red; */
+    position: relative;
+  }
+  .sec-2-text2-1 img{
+    width:48%;
+    height:38vh;
+    position: absolute;
+    background-color:rgba(77, 211, 148, 0.13) ;
+    top:3vh;
+    left:23%;
+    /* z-index: 99; */
+    border-radius: 50%;
+  }
+  .sec-2-text2-1 div{
+    width:48%;
+    /* height:28vh; */
+    position: absolute;
+    /* background-color: blueviolet; */
+    top: 10vh;
+    left:55%;
+    /* z-index: 100; */
+    text-align: center;
+    font-size: 18px;
+    border-left: 4px solid rgba(27, 26, 27, 0.74);
+  }
+  .sec-2-text2-2 img{
+    width:45%;
+    height:35vh;
+    position: absolute;
+    background-color:rgba(77, 211, 166, 0.13) ;
+    top:18vh;
+    left:15%;
+    z-index: 99;
+    border-radius: 50%;
+  }
+  .sec-2-text2-2 div{
+    width:40%;
+    /* height:28vh; */
+    position: absolute;
+    /* background-color: blueviolet; */
+    top: 30vh;
+    left:45%;
+    border-left: 4px solid rgb(15, 15, 15);
+    z-index: 100;
+    text-align: center;
+    font-size: 18px;
+    
+  }
+  .sec-2-text2-3 span{
+    font-size: 25px;
+    color: rgb(65, 230, 194);
   }
 /* page4.css */
 .title1 {
@@ -612,7 +673,104 @@ animation:move2 3s infinite;
   background-size: cover;
 }
 
-/* 第三页 */
+
+
+/* 第四页 */
+#sec-4{
+  padding:20vh 0;
+}
+.scroll-container{
+  width:100%;
+  height:100%;
+  /* background-color: #b1f4cf; */
+
+  /* background-color: blanchedalmond; */
+}
+.container-small img{
+  width:100%;
+  height:100%;
+}
+.container-small{
+  width:80%;
+  height:100%;
+  margin: 0 auto;
+}
+.container-small h2{
+  width:100%;
+  height:10vh;
+  /* background-color: rgb(126, 160, 95); */
+  margin: 0 auto;
+}
+
+.experience-item h5{
+  /* background-color: crimson; */
+  width:30%;
+  height:5vh;
+}
+.item-text{
+  width:40%;
+ height:auto;
+  word-wrap:break-word;
+  word-break:break-all;
+  overflow: hidden;
+  /* background-color: #000; */
+
+}
+.desc-2{
+  width:100%;
+  height:30vh;
+  /* background-color: cadetblue; */
+  margin: 0 auto;
+}
+.experience-item{
+  width:100%;
+  height:45vh;
+  /* margin:0 auto; */
+  display: flex;
+  /* background-color: yellow; */
+          /*justify-content: center; /* 水平居中 */
+   align-items: center;     /* 垂直居中 */
+}
+.experience-item1{
+  /* padding-left: 40%; */
+  /* background-color: yellowgreen; */
+  width:70%;
+  float:right;
+
+  
+}
+.experience-item1 .item-text{
+  width:60%;
+}
+/* .experience-item1 .image-wrap,.experience-item2{
+  float:right;
+} */
+.experience-item-2{
+  width:30%;
+  /* background-color: #b1f4cf; */
+  position: absolute;
+right:10%;
+}
+  /* margin-right: 1vh;**/
+
+.experience-item2 .image-wrap{
+  width:25%;
+  height:100%;
+  /* background-color: cornflowerblue; */
+  float:left; 
+   margin-right: 5%;
+  /* border-radius: 50%; */
+}  
+
+.experience-item1 .image-wrap{
+  /* background-color: #b1f4cf; */
+  width:37%;
+  
+}
+
+
+
+/* 第五页 */
 .sec5{
   /* background-image: url(../images/我的2020.png); */
  background-size: 100% auto;
