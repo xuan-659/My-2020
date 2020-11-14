@@ -5,12 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
     <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/scrollReveal.js"></script>
     <link rel="shortcut icon" href="images\logo\logo.ico" type="image/x-icon" />
     <title>我的2020</title>
   </head>
   <body>
+    <div id="large-header">
+        <canvas id="demo-canvas"></canvas>
+    </div>
     <div class="wrapper">
-    
+        <!-- 鼠标样式 -->
+        
     <!-- 第一个页面 -->
     <!-- 左侧导航栏模块 -->
     <section id="sec-1">
@@ -42,45 +47,15 @@
   
         <div class="navbar-dot"></div>
       </div>
-
-      <!-- 头部模块 -->
-      <!-- <header class="header"></header>
-      <div class="header-content clearfix">
-        <div class="header-leftPart">
-            <h1 style="line-height: 70px;"><span>s</span><span style="color: rgb(255, 255, 255);">acc</span></h1>
-        </div>
-        <div class="sacc-rightPart">
-            <ul class="sacc-nav" style="line-height: 70px;">
-                <li id="sacc-jump-home"><a class="intro-title" href="javascript:void(0);" style="color: rgb(247, 219, 97);">Home</a></li>
-                <li id="sacc-jump-dt"><a class="intro-title" href="javascript:void(0);" style="color: rgb(247, 219, 97);">Departments</a></li>
-                <li id="sacc-jump-team"><a class="intro-title" href="javascript:void(0);" style="color: rgb(247, 219, 97);">Team</a></li>
-                <li><a href="http://join.njupt-sacc.com/">JoinUs</a></li>
-            </ul>
-        </div> -->
-        <!--移动端显示-->
-        <!-- <div class="right-mobile">
-            <div class="right-mobile-part">
-                <span class="mobile-toggle-icon"></span>
-                <span class="mobile-toggle-icon"></span>
-                <span class="mobile-toggle-icon"></span>
-                <span class="mobile-toggle-icon"></span>
-            </div>
-            <div class="right-mobile-content">
-                <ul class="mobile-sacc-nav">
-                    <li id="sacc-jump-moble-home"><a class="intro-title" href="javascript:void(0);">Home</a></li>
-                    <li id="sacc-jump-moble-dt"><a class="intro-title" href="javascript:void(0);">Departments</a></li>
-                    <li id="sacc-jump-moble-team"><a class="intro-title" href="javascript:void(0);">Team</a></li>
-                    <li><a href="http://join.njupt-sacc.com/">Join Us</a></li>
-                </ul>
-                <ul class="mobile-contact-us-icon-list">
-                    <li><i class="fa fa-qq"><a href="https://jq.qq.com/?_wv=1027&amp;k=5144GCF"></a></i></li>
-                    <li><i class="fa fa-wechat"><a href=""></a></i></li>
-                    <li><i class="fa fa-github"><a href=""></a></i></li>
-                </ul>
-            </div>
-        </div> -->
-    </div>
-    </section>
+      <!-- 向右箭头 -->
+      <div class="arrow-right">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+     </section>
     <section id="sec-2"><h2>2</h2></section>
     <section id="sec-3">
       <div class="title1">
@@ -326,5 +301,8 @@
     <section id="sec-6"><h1>6</h1></section>
   </div>
     <script src="./js/index.js"></script>
+    <script src="./js/EasePack.min.js"></script>
+    <script src="./js/TweenLite.min.js"></script>
+    <script src="./js/canvasGeneratrix.js"></script>
   </body>
 </html>

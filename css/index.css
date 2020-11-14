@@ -40,10 +40,14 @@ body {
   width: 100%;
   height: 100vh;
   /* url(../images/sec-1bg-transpant.png) */
-      background:url(../images/O2QxZ_h9yNqEn2N0DY1509695673.gif);
   /* background-image:url(../images/sec-1bg-transpant.png);*/
   background-size: 100% 100%;
   background-position: -2px 0px; 
+}
+
+#large-header {
+  position: absolute;
+  z-index: 987;
 }
 
 /* 左侧导航栏模块 */
@@ -100,43 +104,99 @@ body {
   border-radius: 50%;
 }
 
-.header {
-  width: 100%;
-  top: 0;
+body {
+  --tenfold-distance: 300px;
+  --distance: 30px;
+  --half-distance: 15px;
+  --neg-one-third-distance: -10px;
+  --neg-half-distance: -15px;
+}
+
+@keyframes moveToRight {
+  0% {
+    /* transform: 0; */
+  }
+  100% {
+    transform: translateX(var(--distance));
+  }
+}
+
+@keyframes addOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(var(--distance));
+  }
+}
+
+@keyframes deOpacity {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(var(--distance));
+  }
+}
+
+/* 向右箭头 */
+.arrow-right {
+  width: var(--tenfold-distance);
+  height: 35px;
+  position: relative;
+  top: 110px;
+  left: 300px;
+  /* background-color: aqua; */
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+}
+
+.arrow-right div:nth-child(n) {
+  height: 0;
+  width: 0;
+  border: var(--half-distance) solid transparent;
+  border-left: var(--half-distance) solid red;
+  /* background-color: khaki; */
+  position: absolute;
+  /* top: 10px; */
+}
+.arrow-right div:nth-child(n):after {
+  border: var(--half-distance) solid transparent;
+  border-left: var(--half-distance) solid rgba(147, 172, 241);
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: var(--neg-half-distance);
+  right: var(--neg-one-third-distance);
+  content: " ";
+  /* top:0;
+  right: 0; */
+}
+
+.arrow-right div:nth-child(1) {
   left: 0;
-  position: fixed;
-  z-index: 9998;
-  height: 70px;
-  background-color: black;
+  animation: addOpacity 1s infinite linear;
 }
 
-.header-content {
-  width: 80%;
-  margin: 0 10%;
-  position: fixed;
-  top: 0;
-  z-index: 9999;
+.arrow-right div:nth-child(2) {
+  left: 10%;
+  animation: moveToRight 1s infinite linear;
 }
 
-.header-leftPart h1 {
-  color: #0b0d0e;
-  text-transform: uppercase;
-  font-family: "Varela Round", cursive;
-  height: 70px;
-  line-height: 95px;
-  font-weight: 900;
-  letter-spacing: 15px;
-  font-size: 2.5vw;
-  -webkit-transition: line-height 0.4s ease-in-out;
-  -moz-transition: line-height 0.4s ease-in-out;
-  -ms-transition: line-height 0.4s ease-in-out;
-  -o-transition: line-height 0.4s ease-in-out;
-  transition: line-height 0.4s ease-in-out;
-  transition-delay: 0.3s;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+.arrow-right div:nth-child(3) {
+  left: 20%;
+  animation: moveToRight 1s infinite linear;
+}
+
+.arrow-right div:nth-child(4) {
+  left: 30%;
+  animation: moveToRight 1s infinite linear;
+}
+
+.arrow-right div:nth-child(5) {
+  left: 40%;
+  animation: deOpacity 1s infinite linear;
 }
 
 /* page1 css end */
