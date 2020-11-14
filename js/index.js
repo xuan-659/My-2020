@@ -133,7 +133,7 @@ var navBarDot = document.querySelectorAll(".navbar-dot");
 var navBarFlag = 0;
 for (let i = 0; i < 6; i++) {
   navBarDot[i].addEventListener("click", function () {
-    console.log(888);
+    if (clickFlag == 1) return false;
     clickFlag = 1;
     navBarDot[navBarFlag].classList.remove("navbar-selected");
     navBarDot[i].classList.add("navbar-selected");
@@ -161,12 +161,47 @@ window.addEventListener("scroll", function () {
       navBarFlag = i;
     }
   }
-  if (window.scrollY >= getElementTop(sec[5])-10) {
+  if (window.scrollY >= getElementTop(sec[5]) - 10) {
     navBarDot[navBarFlag].classList.remove("navbar-selected");
     navBarDot[5].classList.add("navbar-selected");
     navBarFlag = 5;
   }
 });
+
+
+//1.创建一个scrollReveal对象
+window.page1 = ScrollReveal();
+//2.调用scrollReveal里的reveal方法将scrollReveal内部的动画和css中的标签关联起来
+sr.reveal('.',config);
+//参数一：跟html标签关联的类名
+//参数二：动画配置
+var config = {
+  reset: true,   // 滚动鼠标时，动画开关(默认是false没有打开鼠标滚动的动画开关)
+  origin: 'right', // 动画开始的方向
+  duration: 500,   // 动画持续时间
+  delay: 0, // 延迟
+  rotate: {x:0, y:0, z:0},  // 过度到0的初始角度
+  opacity: 0.2, // 初始透明度  (0.2到1的效果)
+  scale:2,       //缩放
+  easing: 'ease-in-out', //动画效果// 缓动'ease', 'ease-in-out'，'linear'...
+  // 回调函数
+//   //当动画开始之前会被触发
+//   beforeReveal: function(domEl){
+//       console.log('动画执行了');
+//   },
+//   //鼠标滚轮滚动之前会被触发
+//   beforeReset: function(domEl){
+//       console.log('滚轮开始---');
+//   },
+//   //动画开始之后会被触发
+//   afterReveal: function(domEl){
+//       console.log('动画结束了');
+//   },
+//   //滚轮滚动之后会被触发
+//   afterReset: function(domEl){
+//       console.log('滚轮结束了');
+//   }
+// };
 
 //page2.js
 
@@ -221,128 +256,88 @@ window.onload = function () {
   };
 };
 
-
-
 //page5.js
-let step                =       0;
-let step2               =       0;
-const stepMap           =       new Map();
-const circleMap         =       new Map();
-const numberList        =       document.querySelectorAll('.digitial_list');
-const baseHeight        =       96;
-const length            =       2;
-const maxCircle         =       10;
-const baseTime          =       500;
-const totalTime         =       500;  // 总时长
-var endNumber         =  ''  ;
-// var min                 =        0;
-// var sec                 =        0;
-let endNumberList       =       [];
-let circleNum           =       0;      // 总圈数(暂定~)
-var d                   = 0;
+let step = 0;
+let step2 = 0;
+const stepMap = new Map();
+const circleMap = new Map();
+const numberList = document.querySelectorAll(".digitial_list");
+const baseHeight = 96;
+const length = 2;
+const maxCircle = 10;
+const baseTime = 300;
+const totalTime = 500; // 总时长
+var endNumber = "";
+var currentNumber = 0;
+// var min                 =    0;
+// var sec                 =    0;
+let endNumberList = [];
+let circleNum = 0; // 总圈数(暂定~)
+var d = 0;
 
 function init() {
-    numberList.forEach((item, index) => {
-        stepMap.set(index, 0);
-        circleMap.set(index, 0);
-    });
-    endNumberList = endNumber.toString().split('');
+  numberList.forEach((item, index) => {
+    stepMap.set(index, 0);
+    circleMap.set(index, 0);
+  });
+  getDay();
+  endNumberList = endNumber.toString().split("");
 }
-
 
 //倒计时
 function getDistanceSpecifiedTime() {
-    // 指定日期和时间
-    var EndTime = new Date(2021,0,1);
-    // 当前系统时间
-    var NowTime = new Date();
-    var t = EndTime.getTime() - NowTime.getTime();
-     d = Math.floor(t / 1000 / 60 / 60 / 24);
-    var h = Math.floor(t / 1000 / 60 / 60 % 24);
-    var m = Math.floor(t / 1000 / 60 % 60);
-    var s = Math.floor(t / 1000 % 60);
-   
-     endNumber         =   ""+d   ;
-     document.querySelector("#hour").innerHTML=h;     
+  // 指定日期和时间
+  var EndTime = new Date(2021, 0, 1);
+  // 当前系统时间
+  var NowTime = new Date();
+  var t = EndTime.getTime() - NowTime.getTime();
+  d = Math.floor(t / 1000 / 60 / 60 / 24);
+  var h = Math.floor((t / 1000 / 60 / 60) % 24);
+  var m = Math.floor((t / 1000 / 60) % 60);
+  var s = Math.floor((t / 1000) % 60);
 
-     document.querySelector("#min").innerHTML=m;
-     document.querySelector("#sec").innerHTML=s;     
-
-
+  endNumber = "" + d;
+  document.querySelector("#hour").innerHTML = h;
+  document.querySelector("#min").innerHTML = m;
+  document.querySelector("#sec").innerHTML = s;
 }
-// function getDay(){
-//   // 指定日期和时间
-//   var EndTime = new Date(2021,0,1);
-//   // 当前系统时间
-//   var NowTime = new Date();
-//   var t = EndTime.getTime() - NowTime.getTime();
-//    d = Math.floor(t / 1000 / 60 / 60 / 24);
-//    endNumber         =   ""+d ;
-// }
-// var numberBoxFlag=0;
-// getDay();
- setInterval("getDistanceSpecifiedTime()",500);
-//  if(numberBoxFlag===0){
- 
-// function y(){
-//  if(getElementTop(sec[4])<=window.scrollY&&getElementTop(sec[5])>=window.scrollY)
-//  {
-//     // numberBoxFlag=1;
-// //  getDay();
-// alert("hhhhhhhh");
-//  }
-// //  else{
-// //    endNumber='';
-// //  }
-// }
+function getDay() {
+  // 指定日期和时间
+  var EndTime = new Date(2021, 0, 1);
+  // 当前系统时间
+  var NowTime = new Date();
+  var t = EndTime.getTime() - NowTime.getTime();
+  d = Math.floor(t / 1000 / 60 / 60 / 24);
+  endNumber = "" + d;
+}
+var numberBoxFlag = 0;
 
-// var qw = document.querySelector('.submit-work');
-// qs.addEventListener('click',function(){
-  // startAnimation();
-  // getDay();
-  // console.log(1);
-// });
-
-
-// y();
-// setInterval("y()",3000);
-
-
-// getDistanceSpecifiedTime()
-
-// $(window).scroll2(function (){
-//   if ($(window).scrollTop()>=) {
-//       getDay();
-//   }
-//   else{
-//       document.querySelector(".image-block").style.opacity=0;
-//   }
-// });
-
-
-
+setInterval("getDistanceSpecifiedTime()", 500);
 
 function scroll(index, scrollBox, maxLength, gapTime, circle, stopNum, timer) {
-    let currentStep = stepMap.get(index);
-    let newStep = currentStep;
-    let currentCircle = circleMap.get(index);
-    const currentNumber = parseInt(scrollBox.children[currentStep].innerText);
-    scrollBox.style.transform = `translate(0, -${currentStep * baseHeight}px)`;
-    if(currentCircle === circle - 1 && currentNumber === stopNum) {
-        clearInterval(timer);
-    }
-    if(currentStep === maxLength - 1) {
-        stepMap.set(index, 0);
-        circleMap.set(index, ++currentCircle);
-        setTimeout(function() {
-            scrollBox.style.transitionProperty = 'none';
-            scrollBox.style.transform = `translate(0, 0)`;
-        }, gapTime);
-    } else {
-        scrollBox.style.transition = `all ${gapTime / 1000}s`;
-        newStep++;
-        stepMap.set(index, newStep);
-    }
+  let currentStep = stepMap.get(index);
+  let newStep = currentStep;
+  let currentCircle = circleMap.get(index);
+  var currentNumber = parseInt(scrollBox.children[currentStep].innerText);
+  scrollBox.style.transform = `translate(0, -${currentStep * baseHeight}px)`;
+  // console.log(currentCircle+'  '+circle )
+  // console.log(currentNumber);
+  if (currentCircle === circle - 1 && currentNumber === stopNum) {
+    // console.log("啦啦啦");
+    clearInterval(timer);
+  }
+  if (currentStep === maxLength - 1) {
+    stepMap.set(index, 0);
+    circleMap.set(index, ++currentCircle);
+    setTimeout(function () {
+      scrollBox.style.transitionProperty = "none";
+      scrollBox.style.transform = `translate(0, 0)`;
+    }, gapTime);
+  } else {
+    scrollBox.style.transition = `all ${gapTime / 1000}s`;
+    newStep++;
+    stepMap.set(index, newStep);
+  }
 }
 
 function startAnimation() {
@@ -363,9 +358,27 @@ function startAnimation() {
     })
 }
 
-init();
-startAnimation();
+var numberBoxFlag = true;
 
+var floatUp = {
+  reset: true,
+  distance: '20px',
+  origin: 'bottom'
+}
 
-
+ScrollReveal().reveal(".container", {
+  reset: true,
+  opacity: 1,
+  delay: 0,
+  afterReveal: function () {
+    if (numberBoxFlag) {
+      numberBoxFlag = false;
+      init();
+      startAnimation();
+    }
+    setTimeout(function () {
+      numberBoxFlag = true;
+    }, 3000);
+  },
+});
 //page6.js
