@@ -10,8 +10,8 @@ var sec = new Array(
 );
 // 过场动画
 function none (pass){
-  pass1.style.display="none";
-  pass2.style.display="none";
+  // pass1.style.display="none";
+  // pass2.style.display="none";
   pass.style.display="none";
 }
 var tnz=0;
@@ -41,7 +41,7 @@ function openingAnimation(){
 //    pp4.className="pass4 pp4"
 //  }
 
-setTimeout("none(pp)",2000);
+setTimeout("none(pp)",1000);
 
 }
 // ztn.addEventListener('click',function(){
@@ -71,9 +71,9 @@ function getElementTop(element) {
     scrolly=window.scrollY-sy;
     
          if(scrolly>=0)
-         {angle+=scrolly*0.12;}
+         {angle+=scrolly*0.08;}
          if(scrolly<0)
-         {angle+=scrolly*0.12;}
+         {angle+=scrolly*0.08;}
     
   if(angle > 180){
     // 这里的gap就是每次累加的值
