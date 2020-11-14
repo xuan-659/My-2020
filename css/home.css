@@ -21,7 +21,7 @@ body {
   height: 100%;
   /* background-color: #d9cebc; */
   font-family: "Clearface ITC Bold";
-  color: #ffffff;
+  color: #FFFFB8;
   overflow: hidden;
   text-rendering: auto;
   background-image: url(../images/white_pattern.png);
@@ -43,8 +43,9 @@ body {
   height: 400px;
   width: 100px;
   overflow: hidden;
-  left: 648.5px;
-  top: 198.5px;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%,-50%);
   cursor: pointer;
 }
 
