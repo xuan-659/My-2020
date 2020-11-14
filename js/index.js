@@ -170,17 +170,17 @@ function getDistanceSpecifiedTime() {
 
 
 }
-function getDay(){
-  // 指定日期和时间
-  var EndTime = new Date(2021,0,1);
-  // 当前系统时间
-  var NowTime = new Date();
-  var t = EndTime.getTime() - NowTime.getTime();
-   d = Math.floor(t / 1000 / 60 / 60 / 24);
-   endNumber         =   ""+d ;
-}
-var numberBoxFlag=0;
-getDay();
+// function getDay(){
+//   // 指定日期和时间
+//   var EndTime = new Date(2021,0,1);
+//   // 当前系统时间
+//   var NowTime = new Date();
+//   var t = EndTime.getTime() - NowTime.getTime();
+//    d = Math.floor(t / 1000 / 60 / 60 / 24);
+//    endNumber         =   ""+d ;
+// }
+// var numberBoxFlag=0;
+// getDay();
  setInterval("getDistanceSpecifiedTime()",500);
 //  if(numberBoxFlag===0){
  
@@ -250,7 +250,7 @@ function startAnimation() {
         const childrenLen = scrollBox.children.length;
         const circle = Math.pow(2, index);
         const gapTime = baseTime / circle;
-        const stopNum = +endNumberList[index];
+        const stopNum = endNumberList[index];
         const timer = setInterval(() => { scroll(
             index, 
             scrollBox, 
