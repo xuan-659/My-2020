@@ -34,6 +34,7 @@ var navBarDot = document.querySelectorAll(".navbar-dot");
 var navBarFlag = 0;
 for (let i = 0; i < 6; i++) {
   navBarDot[i].addEventListener("click", function () {
+  if (clickFlag == 1) return false;
     clickFlag = 1;
     navBarDot[navBarFlag].classList.remove("navbar-selected");
     navBarDot[i].classList.add("navbar-selected");

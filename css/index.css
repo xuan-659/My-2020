@@ -3,6 +3,22 @@ body {
   scroll-behavior: smooth;
 }
 
+@font-face {
+  font-family: "Cute";
+  src: url(../fonts/萌趣软糖体.ttf)
+}
+
+@font-face {
+  font-family: "Clearface ITC Bold";
+  src: url(../fonts/Clearface-Bold.otf);
+}
+
+@font-face {
+  font-family: "kanti";
+  src: url(../fonts/锐字云字库楷体GB.ttf);
+}
+
+
 /* 清除浮动 */
 .clearfix:after {
   display: block;
