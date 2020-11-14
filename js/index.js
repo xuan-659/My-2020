@@ -71,9 +71,9 @@ function getElementTop(element) {
     scrolly=window.scrollY-sy;
     
          if(scrolly>=0)
-         {angle+=scrolly*0.2;}
+         {angle+=scrolly*0.12;}
          if(scrolly<0)
-         {angle+=scrolly*0.2;}
+         {angle+=scrolly*0.12;}
     
   if(angle > 180){
     // 这里的gap就是每次累加的值
