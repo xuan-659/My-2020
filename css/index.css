@@ -678,7 +678,7 @@ animation:move2 3s infinite;
   height: 80px;
   /* border: teal 1px solid; */
   margin-left: 18vw;
-  margin-top: 15vh;
+  margin-top: 8vh;
   font-size: 1rem;
   font-family: sans-serif;
   text-align: center;
@@ -691,8 +691,8 @@ animation:move2 3s infinite;
   width: 100px;
   height: 80px;
   /* border: teal 1px solid; */
-  margin-left: 15vw;
-  margin-top: 35vh;
+  margin-left: 20vw;
+  margin-top: 0vh;
   font-size: 1rem;
   font-family: sans-serif;
   text-align: center;
