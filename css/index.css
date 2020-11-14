@@ -314,6 +314,53 @@ animation:move2 3s infinite;
   background-color: springgreen;
 }
 
+
+
+/* page2 */
+.sec-2-text1{
+  /* display: flex; */
+  height:45%;
+  /* background-color: blueviolet; */
+}
+.sec-2-text{
+  width:80%;
+  /* height:50%; */
+  /* margin:0 auto; */
+  /* background-color: #E3FDF5; */
+  margin-left: 10%;
+  border: 1px solid rgba(248, 246, 243, 0.034);
+  
+}
+.sec-2-text2{
+ display: flex;
+ /* background-color: black; */
+ height:60%;
+}
+.sec-2-text1-p{
+  width:50%;
+  height:40%;
+  margin-top: 5vh;
+  /* background-color: #ff6a86; */
+  margin:0 auto;
+  text-align: center;
+  margin-top: 4vh;
+  font-size: 20px;
+}
+.sec-2-text1-h{
+  width:55%;
+  margin:0 auto;
+  /* background-color: #E3FDF5; */
+  /* text-align: center; */
+  margin-top: 15vh;
+  font-size: 30px;
+  border-bottom: 1px dashed rgba(174, 159, 209, 0.719);
+}
+ 
+  .sec-c-text2-3{
+    width:50%;
+    height:100%;
+    border:1px solid red;
+  }
 /* page4.css */
 .title1 {
   position: relative;
