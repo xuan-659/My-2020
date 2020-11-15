@@ -1,97 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/contract.css" />
-    <script
-      type="text/javascript"
-      src="https://webapi.amap.com/maps?v=1.4.15&key=ecc9990e88b0abe2d71a9cad1eda0273"
-    ></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/contract.css">
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=ecc9990e88b0abe2d71a9cad1eda0273"></script> 
     <title>Document</title>
-  </head>
-  <body>
-    <!-- 开场动画 -->
-    <div class="transition_start">
-      <div class="black move-top"></div>
-      <div class="white move-top delay"></div>
-      <div class="white move-bottom delay"></div>
-      <div class="black move-bottom"></div>
-    </div>
+</head>
+<body>
+<!-- 开场动画 -->
+<div class="transition_start">
+  <div class="black move-top"></div>
+  <div class="white move-top delay"></div>
+  <div class="white move-bottom delay"></div>
+  <div class="black move-bottom"></div>
+</div>
 
     <div class="contract-box">
-      <div id="map"></div>
-      <div class="image-block">
-        <img src="images/32.gif" />
-      </div>
-      <div class="text-block">
-        <div class="text-block-top">
-          <span>contract us</span>
-          <h2>留下你的2020故事吧</h2>
-          <div class="text-block-top-text">
-            南京邮电大学仙林校区地址：南京亚东新城区文苑路 9 号（邮编
-            210023）<br />咨询电话：18230569526
-          </div>
-          <div class="scroll" id="scroll">
-            <svg
-              t="1605085651089"
-              class="icon"
-              viewBox="0 0 1024 1024"
-              version="1.1"
-              xmlns="http://www.w3.org/2000/svg"
-              p-id="7502"
-              width="200"
-              height="200"
-            >
-              <path
-                d="M533.7 544.7l1.8-1.8 21.8-21.8L733 345.4c12.5-12.4 12.5-32.8 0.1-45.2-12.5-12.4-32.9-12.4-45.3 0L512 475.9 336.3 300.1c-12.5-12.4-32.9-12.4-45.3 0-12.4 12.5-12.4 32.9 0 45.3l175.7 175.7 21.5 21.5 2.2 2.2c5.7 5.2 13.2 8.3 21.5 8.3 8.4 0.1 16.1-3.1 21.8-8.4z"
-                fill="#aa93b8"
-                p-id="7503"
-                data-spm-anchor-id="a313x.7781069.0.i38"
-                class="selected"
-              ></path>
-              <path
-                d="M533.7 724.8l1.8-1.8 21.8-21.8L733 525.5c12.5-12.4 12.5-32.8 0.1-45.2-12.5-12.4-32.9-12.4-45.3 0L512 656 336.3 480.2c-12.5-12.4-32.9-12.4-45.3 0-12.4 12.5-12.4 32.9 0 45.3l175.7 175.7 21.5 21.5 2.2 2.2c5.7 5.2 13.2 8.3 21.5 8.3 8.4 0.1 16.1-3.1 21.8-8.4z"
-                fill="#e6deeb"
-                p-id="7504"
-                data-spm-anchor-id="a313x.7781069.0.i37"
-                class=""
-              ></path>
-            </svg>
-            <!-- <svg t="1605085356073" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6683" data-spm-anchor-id="a313x.7781069.0.i26" width="200" height="200"><path d="M512 4.096C231.424 4.096 4.096 231.424 4.096 512s227.328 508.416 508.416 508.416 508.416-227.328 508.416-508.416S792.576 4.096 512 4.096z m0 941.568c-239.616 0-433.664-194.048-433.664-433.664S272.384 78.336 512 78.336s433.664 194.048 433.664 433.664-194.048 433.664-433.664 433.664z" fill="#efe2f8" p-id="6684"></path><path d="M512.512 770.048c-9.216 0-18.432-3.584-25.088-10.24l-239.104-238.592c-13.824-13.824-13.824-36.864 0-50.688s36.864-13.824 50.688 0l214.016 213.504L727.04 470.528c13.824-13.824 36.864-13.824 50.688 0s13.824 36.864 0 50.688L537.6 759.808c-6.656 6.656-15.872 10.24-25.088 10.24z" fill="#e6deeb" p-id="6685" data-spm-anchor-id="a313x.7781069.0.i25" class="selected"></path><path d="M512.512 565.248c-9.216 0-18.432-3.584-25.088-10.24L248.32 316.416c-13.824-13.824-13.824-36.864 0-50.688s36.864-13.824 50.688 0l214.016 213.504L727.04 265.728c13.824-13.824 36.864-13.824 50.688 0s13.824 36.864 0 50.688L537.6 555.008c-6.656 6.656-15.872 10.24-25.088 10.24z" fill="#e2c7f3" p-id="6686" data-spm-anchor-id="a313x.7781069.0.i19" class=""></path></svg> -->
-            <div class="back back1" id="back"></div>
-            <div class="back back2"></div>
-            <div class="back back3"></div>
-            <div class="back back4"></div>
-            <div class="back back5"></div>
-          </div>
+        <div id="map"></div>
+        <diV class="image-block">
+            <img src="images/32.gif">
+        </diV>
+        <div class="text-block">
+            <div class="text-block-top">
+                <span>contract us</span>
+                <h2>留下你的2020故事吧</h2>
+                <div class="text-block-top-text">
+                  南京邮电大学仙林校区地址：南京亚东新城区文苑路 9 号（邮编 210023）<br>咨询电话：18230569526
+                </div>
+                <div class="scroll" id="scroll">
+                    <svg t="1605085651089" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7502" width="200" height="200"><path d="M533.7 544.7l1.8-1.8 21.8-21.8L733 345.4c12.5-12.4 12.5-32.8 0.1-45.2-12.5-12.4-32.9-12.4-45.3 0L512 475.9 336.3 300.1c-12.5-12.4-32.9-12.4-45.3 0-12.4 12.5-12.4 32.9 0 45.3l175.7 175.7 21.5 21.5 2.2 2.2c5.7 5.2 13.2 8.3 21.5 8.3 8.4 0.1 16.1-3.1 21.8-8.4z" fill="#aa93b8" p-id="7503" data-spm-anchor-id="a313x.7781069.0.i38" class="selected"></path><path d="M533.7 724.8l1.8-1.8 21.8-21.8L733 525.5c12.5-12.4 12.5-32.8 0.1-45.2-12.5-12.4-32.9-12.4-45.3 0L512 656 336.3 480.2c-12.5-12.4-32.9-12.4-45.3 0-12.4 12.5-12.4 32.9 0 45.3l175.7 175.7 21.5 21.5 2.2 2.2c5.7 5.2 13.2 8.3 21.5 8.3 8.4 0.1 16.1-3.1 21.8-8.4z" fill="#e6deeb" p-id="7504" data-spm-anchor-id="a313x.7781069.0.i37" class=""></path></svg>
+                   
+                    <div class="back back1"id="back"></div>
+                    <div class="back back2"></div>
+                    <div class="back back3"></div>
+                    <div class="back back4"></div> 
+                    <div class="back back5"></div>
+                </div>
+            </div>
+            <div class="text-block-bottom">
+              <h2>submmit your works to us!</h2>
+              <div>
+                <h3></h3>
+                <input type="text" placeholder="姓名">
+              </div>
+              <div>
+                <input type="text" placeholder="联系电话">
+              </div>
+              <div>
+                <input type="text" placeholder="电子邮箱">
+              </div>
+              <div>
+                <input type="text" placeholder="作品电子文档">
+              </div>
+              <div>
+                <input class="text-block-bottom-submit" type="submit"value="submit" >
+              </div>
+
+               
+              
+            </div>
         </div>
-        <div class="text-block-bottom">
-          <h2>submmit your works to us!</h2>
-          <div>
-            <h3></h3>
-            <input type="text" placeholder="姓名" />
-          </div>
-          <div>
-            <input type="text" placeholder="联系电话" />
-          </div>
-          <div>
-            <input type="text" placeholder="电子邮箱" />
-          </div>
-          <div>
-            <input type="text" placeholder="作品电子文档" />
-          </div>
-          <div>
-            <input
-              class="text-block-bottom-submit"
-              type="submit"
-              value="submit"
-            />
-          </div>
-        </div>
-      </div>
     </div>
     <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
     <script src="./js/contract.js"></script>
-  </body>
+   
+</body>
 </html>

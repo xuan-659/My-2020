@@ -344,14 +344,14 @@ ScrollReveal().reveal(".sec-2-text2-1", {
   duration: 2000,
   easing: 'cubic-bezier(.42,.12,.14,1.01)',
   origin: "left",
-  distance: '160px',
+  distance: '60px',
 });
 
 ScrollReveal().reveal(".sec-2-text2-2", {
   duration: 2000,
   easing: 'cubic-bezier(.42,.12,.14,1.01)',
   origin: "right",
-  distance: '160px',
+  distance: '60px',
 });
 
 //后三个页面
@@ -373,7 +373,7 @@ ScrollReveal().reveal(".desc-2", {
   reset: true,
 });
 ScrollReveal().reveal(".experience-item2", {
-  distance: '150px',
+  distance: '50px',
   origin: 'left',
   duration: 4000,
   // delay: 200,
@@ -381,7 +381,7 @@ ScrollReveal().reveal(".experience-item2", {
   reset: true,
 });
 ScrollReveal().reveal(".experience-item1", {
-  distance: '350px',
+  distance: '50px',
   origin: 'right',
   duration: 4000,
   // delay: 200,
@@ -389,7 +389,7 @@ ScrollReveal().reveal(".experience-item1", {
   reset: true,
 });
 ScrollReveal().reveal(".yuer", {
-  distance: '150px',
+  distance: '50px',
   origin: 'top',
   duration: 4000,
   // delay: 200,
@@ -397,7 +397,7 @@ ScrollReveal().reveal(".yuer", {
   reset: true,
 });
 ScrollReveal().reveal(".sec-5-box-left-text", {
-  distance: '150px',
+  distance: '50px',
   origin: 'left',
   duration: 4000,
   // delay: 200,
@@ -405,7 +405,7 @@ ScrollReveal().reveal(".sec-5-box-left-text", {
   reset: true,
 });
 ScrollReveal().reveal(".sec-5-box-right-text", {
-  distance: '250px',
+  distance: '50px',
   origin: 'right',
   duration: 4000,
   // delay: 200,
