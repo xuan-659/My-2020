@@ -13,12 +13,13 @@ function preloader() {
     e.preventDefault();
   });
 }
+
 if (home_entrance && home_enter) {
   home_entrance.addEventListener("click", function () {
-    window.location.href = "index.html";
+    window.location.href = "content.html";
   });
   home_enter.addEventListener("click", function () {
-    window.location.href = "index.html";
+    window.location.href = "content.html";
   });
 }
 

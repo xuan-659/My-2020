@@ -107,10 +107,16 @@ for (let i = 0; i < 6; i++) {
 //第一页向下箭头
 var sec1ArrowDown = document.querySelector(".sec-1-scroll");
 sec1ArrowDown.addEventListener("click", function () {
-  navBarDot[navBarFlag].classList.remove("navbar-selected");
-  navBarDot[1].classList.add("navbar-selected");
-  navBarFlag = 1;
-  sec[1].scrollIntoView();
+  if (clickFlag == 1) return false;
+    clickFlag = 1;
+    navBarDot[navBarFlag].classList.remove("navbar-selected");
+    navBarDot[1].classList.add("navbar-selected");
+    navBarFlag = 1;
+    sec[1].scrollIntoView();
+    setTimeout(function () {
+      clickFlag = 0;
+    }, 750);
+  
 });
 
 //第一页contract按钮和第五页submit按钮
@@ -163,7 +169,6 @@ window.addEventListener("scroll", function () {
     navBarFlag = 5;
   }
 });
-
 
 // page4.js
 window.onload = function () {
@@ -334,86 +339,83 @@ ScrollReveal().reveal("#sec-1-text4", {
 
 ScrollReveal().reveal(".sec-2-text1", {
   duration: 4000,
-  easing: 'cubic-bezier(.41,.55,.83,.67)',
+  easing: "cubic-bezier(.41,.55,.83,.67)",
   reset: true,
   // opacity: 0
 });
 
-
 ScrollReveal().reveal(".sec-2-text2-1", {
   duration: 2000,
-  easing: 'cubic-bezier(.42,.12,.14,1.01)',
+  easing: "cubic-bezier(.42,.12,.14,1.01)",
   origin: "left",
-  distance: '60px',
+  distance: "60px",
 });
 
 ScrollReveal().reveal(".sec-2-text2-2", {
   duration: 2000,
-  easing: 'cubic-bezier(.42,.12,.14,1.01)',
+  easing: "cubic-bezier(.42,.12,.14,1.01)",
   origin: "right",
-  distance: '60px',
+  distance: "60px",
 });
 
 //后三个页面
 
 ScrollReveal().reveal(".container-small-start", {
-  distance: '60px',
-  origin: 'top',
+  distance: "60px",
+  origin: "top",
   duration: 4000,
   // delay: 500,
   interval: 500,
   reset: true,
 });
 ScrollReveal().reveal(".desc-2", {
-  distance: '60px',
-  origin: 'top',
+  distance: "60px",
+  origin: "top",
   duration: 4000,
   // delay: 300,
   interval: 500,
   reset: true,
 });
 ScrollReveal().reveal(".experience-item2", {
-  distance: '50px',
-  origin: 'left',
+  distance: "50px",
+  origin: "left",
   duration: 4000,
   // delay: 200,
   interval: 500,
   reset: true,
 });
 ScrollReveal().reveal(".experience-item1", {
-  distance: '50px',
-  origin: 'right',
+  distance: "50px",
+  origin: "right",
   duration: 4000,
   // delay: 200,
   interval: 500,
   reset: true,
 });
 ScrollReveal().reveal(".yuer", {
-  distance: '50px',
-  origin: 'top',
+  distance: "50px",
+  origin: "top",
   duration: 4000,
   // delay: 200,
   interval: 300,
   reset: true,
 });
 ScrollReveal().reveal(".sec-5-box-left-text", {
-  distance: '50px',
-  origin: 'left',
+  distance: "50px",
+  origin: "left",
   duration: 4000,
   // delay: 200,
   interval: 300,
   reset: true,
 });
 ScrollReveal().reveal(".sec-5-box-right-text", {
-  distance: '50px',
-  origin: 'right',
+  distance: "50px",
+  origin: "right",
   duration: 4000,
   // delay: 200,
   interval: 300,
   reset: true,
 });
-
-
 
 ScrollReveal().reveal(".container", {
   reset: true,
