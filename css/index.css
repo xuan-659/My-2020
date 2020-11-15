@@ -1042,7 +1042,7 @@ svg {
 .experience-item1{
   /* padding-left: 40%; */
   /* background-color: yellowgreen; */
-  width:70%;
+  width:60%;
   height:40vh;
   float:right;
   /* border-radius: 50%; */
@@ -1083,13 +1083,13 @@ right:10%; */
 
 .experience-item1 .image-wrap{
   /* background-color: #b1f4cf; */
-  width:42%;
+  width:48%;
   height:95%;
   /* border-radius: 50%; */
   
 }
 .experience-item img{
-  width:80%;
+  width:83%;
   height:100%;
   border-radius: 50%;
   border:2px solid rgb(220, 221, 160);
@@ -1100,7 +1100,7 @@ right:10%; */
   margin-left: 50%;
   text-align: center;
   font-size: 25px;
-  color: rgba(220, 247, 99, 0.932);
+  color: rgba(174, 69, 223, 0.932);
   border-bottom:4px solid rgba(25, 26, 25, 0.952);
 }
 
