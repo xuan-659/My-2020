@@ -169,16 +169,20 @@ body {
 
 .left {
   position: relative;
-  width : 28.5px;
-  height : 84px;
+  /* width : 28.5px;
+  height : 84px; */
+  width: 1rem;
+  height: 2rem;
   overflow: hidden;
 }
 .leftcircle {
   position: absolute;
   top: 0;
   left: 0;
-  width: 63px;
-  height: 63px;
+  /* width: 63px;
+  height: 63px; */
+  width: 2rem;
+  height: 2rem;
   border: 7.5px solid #2c3e50;
   border-radius: 50%;
   border-bottom-color: #f1c40f;
@@ -190,16 +194,20 @@ body {
 
 .right {
   position: relative;
-  width : 31.5px;
-  height : 88px;
+  /* width : 31.5px;
+  height : 88px; */
+  width: 1rem;
+  height: 2rem;
   overflow: hidden;
 }
 .rightcircle {
   position: absolute;
   top: 0;
   right: 0;
-  width: 63px;
-  height: 63px;
+  /* width: 63px;
+  height: 63px; */
+  width: 2rem;
+  height: 2rem;
   border: 7.5px solid #2c3e50;
   border-radius: 50%;
   border-top-color: #f1c40f;
