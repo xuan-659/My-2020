@@ -8,47 +8,7 @@ var sec = new Array(
   document.querySelector("#sec-5"),
   document.querySelector("#sec-6")
 );
-// 过场动画
-function none (pass){
-  // pass1.style.display="none";
-  // pass2.style.display="none";
-  pass.style.display="none";
-}
-var tnz=0;
-var ztn=document.getElementsByClassName("ztn")[0];
-var tn1=document.getElementsByClassName("tn")[0];
-var tn2=document.getElementsByClassName("tn")[1];
-var tn3=document.getElementsByClassName("tn")[2];
-var tn4=document.getElementsByClassName("tn")[3];
-// var pp1=document.getElementsByClassName("p1")[0];
-// var pp2=document.getElementsByClassName("p2")[0];
-var pp1=document.getElementById("pass1");
-var pp2=document.getElementById("pass2");
-var pp3=document.getElementsByClassName("pass3")[0];
-var pp4=document.getElementsByClassName("pass4")[0];
-var pp=document.getElementsByClassName("pass")[0];
-function openingAnimation(){
- pp1.className="pass1 pp1";
- pp2.className="pass2 pp2";
- pp3.className="pass3 pp3";
-  pp4.className="pass4 pp4"
-// var pp=getComputedStyle(pp1,null);
-//     ppp=parseInt(pp.marginTop)
-//   console.log(ppp); 
-//  if(ppp<=-10)
-//  {
-//    pp3.className="pass3 pp3";
-//    pp4.className="pass4 pp4"
-//  }
-
-setTimeout("none(pp)",1000);
-
-}
-// ztn.addEventListener('click',function(){
- setTimeout(openingAnimation,0);
-//   })
-
-                                                     //圆形进度条
+  //圆形进度条
 let angle = 5
       let gap = 0
       var scrolly=0
@@ -77,10 +37,10 @@ function getElementTop(element) {
     
   if(angle > 180){
     // 这里的gap就是每次累加的值
-    gap = angle - lastAngle
+    // gap = angle - lastAngle
   }
   if(angle <= 180){
-  // 右转左不转
+     // 右转左不转
     right.style.cssText = `transform: rotate(${-135 + angle}deg)`
   }else if(angle <= 180 + gap) {
     // 这里只会执行一次，设定的条件是 当前角度小于 180 + gap
@@ -130,9 +90,11 @@ function getElementTop(element) {
 
 //左侧导航栏模块
 var navBarDot = document.querySelectorAll(".navbar-dot");
+// console.log(navBarDot);
 var navBarFlag = 0;
 for (let i = 0; i < 6; i++) {
   navBarDot[i].addEventListener("click", function () {
+    // console.log(1);
     if (clickFlag == 1) return false;
     clickFlag = 1;
     navBarDot[navBarFlag].classList.remove("navbar-selected");
@@ -144,10 +106,51 @@ for (let i = 0; i < 6; i++) {
     }, 750);
   });
 }
+//第一页向下箭头
+var sec1ArrowDown = document.querySelector('.sec-1-scroll');
+console.log(sec1ArrowDown);
+sec1ArrowDown.addEventListener('click',function(){
+  navBarDot[navBarFlag].classList.remove("navbar-selected");
+    navBarDot[1].classList.add("navbar-selected");
+    navBarFlag = 1;
+    sec[1].scrollIntoView();
+})
+
+
+//第一页contract按钮和第五页submit按钮
+var submitButton = document.querySelector('.submit-work')
+var contractButton = document.querySelector('.header-rightPart');
+contractButton.addEventListener('click',function(){
+  location.href="contract.html"
+})
+submitButton.addEventListener('click',function(){
+  location.href="contract.html"
+})
+
+
+//设置开场动画消失并提高左侧导航栏优先级
+setTimeout(function(){
+  document.querySelector(".navbar").style.zIndex = 10001;
+},1000)
+setTimeout(function(){
+  document.querySelector('.transition_start').style.display = 'none';
+},1600)
+
 
 // console.log(getElementTop(sec[5]));
 
 window.addEventListener("scroll", function () {
+  var contractAnimation = document.querySelector('.header-rightPart');
+  var headerAnimation = document.querySelector('.header');
+  if(window.scrollY>0){
+    contractAnimation.style.color = ' rgb(250, 242, 242)'
+    headerAnimation.style.transform = 'translateY(0)';
+  }
+  else {
+    contractAnimation.style.color = 'rgba(47, 255, 175, 0.582) '
+    headerAnimation.style.transform = 'translateY(-65px)';
+  }
+
   if (clickFlag === 1) return false;
   // console.log(clickFlag);
   // console.log(window.scrollY);
@@ -161,7 +164,7 @@ window.addEventListener("scroll", function () {
       navBarFlag = i;
     }
   }
-  if (window.scrollY >= getElementTop(sec[5]) - 10) {
+  if (window.scrollY >= getElementTop(sec[5])) {
     navBarDot[navBarFlag].classList.remove("navbar-selected");
     navBarDot[5].classList.add("navbar-selected");
     navBarFlag = 5;
@@ -169,39 +172,6 @@ window.addEventListener("scroll", function () {
 });
 
 
-//1.创建一个scrollReveal对象
-window.page1 = ScrollReveal();
-//2.调用scrollReveal里的reveal方法将scrollReveal内部的动画和css中的标签关联起来
-sr.reveal('.',config);
-//参数一：跟html标签关联的类名
-//参数二：动画配置
-var config = {
-  reset: true,   // 滚动鼠标时，动画开关(默认是false没有打开鼠标滚动的动画开关)
-  origin: 'right', // 动画开始的方向
-  duration: 500,   // 动画持续时间
-  delay: 0, // 延迟
-  rotate: {x:0, y:0, z:0},  // 过度到0的初始角度
-  opacity: 0.2, // 初始透明度  (0.2到1的效果)
-  scale:2,       //缩放
-  easing: 'ease-in-out', //动画效果// 缓动'ease', 'ease-in-out'，'linear'...
-  // 回调函数
-//   //当动画开始之前会被触发
-//   beforeReveal: function(domEl){
-//       console.log('动画执行了');
-//   },
-//   //鼠标滚轮滚动之前会被触发
-//   beforeReset: function(domEl){
-//       console.log('滚轮开始---');
-//   },
-//   //动画开始之后会被触发
-//   afterReveal: function(domEl){
-//       console.log('动画结束了');
-//   },
-//   //滚轮滚动之后会被触发
-//   afterReset: function(domEl){
-//       console.log('滚轮结束了');
-//   }
-// };
 
 //page2.js
 
@@ -296,7 +266,7 @@ function getDistanceSpecifiedTime() {
   var m = Math.floor((t / 1000 / 60) % 60);
   var s = Math.floor((t / 1000) % 60);
 
-  endNumber = "" + d;
+//   endNumber = d;
   document.querySelector("#hour").innerHTML = h;
   document.querySelector("#min").innerHTML = m;
   document.querySelector("#sec").innerHTML = s;
@@ -308,7 +278,7 @@ function getDay() {
   var NowTime = new Date();
   var t = EndTime.getTime() - NowTime.getTime();
   d = Math.floor(t / 1000 / 60 / 60 / 24);
-  endNumber = "" + d;
+  endNumber = d;
 }
 var numberBoxFlag = 0;
 
@@ -321,9 +291,8 @@ function scroll(index, scrollBox, maxLength, gapTime, circle, stopNum, timer) {
   var currentNumber = parseInt(scrollBox.children[currentStep].innerText);
   scrollBox.style.transform = `translate(0, -${currentStep * baseHeight}px)`;
   // console.log(currentCircle+'  '+circle )
-  // console.log(currentNumber);
   if (currentCircle === circle - 1 && currentNumber === stopNum) {
-    // console.log("啦啦啦");
+    console.log("啦啦啦");
     clearInterval(timer);
   }
   if (currentStep === maxLength - 1) {
@@ -345,7 +314,7 @@ function startAnimation() {
         const childrenLen = scrollBox.children.length;
         const circle = Math.pow(2, index);
         const gapTime = baseTime / circle;
-        const stopNum = endNumberList[index];
+        const stopNum = +endNumberList[index];
         const timer = setInterval(() => { scroll(
             index, 
             scrollBox, 
@@ -358,20 +327,30 @@ function startAnimation() {
     })
 }
 
+
+
+//页面浮现动画
+ 
 var numberBoxFlag = true;
 
-var floatUp = {
+
+var flowUp = {
   reset: true,
+  opacity: 0,
   distance: '20px',
   origin: 'bottom'
 }
 
+ScrollReveal().reveal("")
+
 ScrollReveal().reveal(".container", {
   reset: true,
-  opacity: 1,
+  opacity: 0,
   delay: 0,
+  duration: 1000,
   afterReveal: function () {
     if (numberBoxFlag) {
+      console.log(3333);
       numberBoxFlag = false;
       init();
       startAnimation();
