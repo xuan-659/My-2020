@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Cute";
-  src: url(../fonts/萌趣软糖体.ttf)
+  src: url(../fonts/萌趣软糖体.ttf);
 }
 
 @font-face {
@@ -21,7 +21,7 @@ body {
   height: 100%;
   /* background-color: #d9cebc; */
   font-family: "Clearface ITC Bold";
-  color: #FFFFB8;
+  color: #ffffb8;
   overflow: hidden;
   text-rendering: auto;
   background-image: url(../images/white_pattern.png);
@@ -34,7 +34,6 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-
 }
 
 .home_preloader {
@@ -45,7 +44,7 @@ body {
   overflow: hidden;
   left: 50%;
   top: 60%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   cursor: pointer;
 }
 

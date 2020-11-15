@@ -1,5 +1,4 @@
-
-//page1.js      
+//page1.js
 var sec = new Array(
   document.querySelector("#sec-1"),
   document.querySelector("#sec-2"),
@@ -8,14 +7,14 @@ var sec = new Array(
   document.querySelector("#sec-5"),
   document.querySelector("#sec-6")
 );
-  //圆形进度条
-let angle = 5
-      let gap = 0
-      var scrolly=0
-      var sy=0;
-let left = document.getElementsByClassName('leftcircle')[0]
-let right = document.getElementsByClassName('rightcircle')[0]
-var Button=document.getElementsByClassName('add')[0]
+//圆形进度条
+let angle = 5;
+let gap = 0;
+var scrolly = 0;
+var sy = 0;
+let left = document.getElementsByClassName("leftcircle")[0];
+let right = document.getElementsByClassName("rightcircle")[0];
+var Button = document.getElementsByClassName("add")[0];
 function getElementTop(element) {
   var actualTop = element.offsetTop;
   var current = element.offsetParent;
@@ -27,45 +26,44 @@ function getElementTop(element) {
 
   return actualTop;
 }
-     function circelStart(){
-    scrolly=window.scrollY-sy;
-    
-         if(scrolly>=0)
-         {angle+=scrolly*0.09;}
-         if(scrolly<0)
-         {angle+=scrolly*0.09;}
-    
-  if(angle > 180){
+function circelStart() {
+  scrolly = window.scrollY - sy;
+
+  if (scrolly >= 0) {
+    angle += scrolly * 0.09;
+  }
+  if (scrolly < 0) {
+    angle += scrolly * 0.09;
+  }
+
+  if (angle > 180) {
     // 这里的gap就是每次累加的值
     // gap = angle - lastAngle
   }
-  if(angle <= 180){
-     // 右转左不转
-    right.style.cssText = `transform: rotate(${-135 + angle}deg)`
-  }else if(angle <= 180 + gap) {
+  if (angle <= 180) {
+    // 右转左不转
+    right.style.cssText = `transform: rotate(${-135 + angle}deg)`;
+  } else if (angle <= 180 + gap) {
     // 这里只会执行一次，设定的条件是 当前角度小于 180 + gap
-    right.style.cssText = `transform: rotate(${-135 + 180}deg)`
-  }else if(angle <= 360) {
+    right.style.cssText = `transform: rotate(${-135 + 180}deg)`;
+  } else if (angle <= 360) {
     // 右转且左转
-    right.style.cssText = `transform: rotate(${-135 + 180}deg)`
-    left.style.cssText = `transform: rotate(${-135 + angle - 180}deg)`
+    right.style.cssText = `transform: rotate(${-135 + 180}deg)`;
+    left.style.cssText = `transform: rotate(${-135 + angle - 180}deg)`;
   } else {
-    right.style.cssText = `transform: rotate(${-135 + 180}deg)`
-    left.style.cssText = `transform: rotate(${-135 + 180}deg)`
+    right.style.cssText = `transform: rotate(${-135 + 180}deg)`;
+    left.style.cssText = `transform: rotate(${-135 + 180}deg)`;
   }
   lastAngle = angle;
-  sy=window.scrollY;
+  sy = window.scrollY;
 }
 function autoRoll() {
-     window.addEventListener("scroll",function(e){
-           
-            //使用setTimeout方法产生一个延时效果，是的每次滑动鼠标滑轮，只执行一次事件方法
-            setTimeout(circelStart(), 800);
-
-        });
-    }
-    autoRoll();
-
+  window.addEventListener("scroll", function (e) {
+    //使用setTimeout方法产生一个延时效果，是的每次滑动鼠标滑轮，只执行一次事件方法
+    setTimeout(circelStart(), 800);
+  });
+}
+autoRoll();
 
 var clickFlag = 0;
 // 获取元素距离页面顶端的距离
@@ -107,47 +105,43 @@ for (let i = 0; i < 6; i++) {
   });
 }
 //第一页向下箭头
-var sec1ArrowDown = document.querySelector('.sec-1-scroll');
-sec1ArrowDown.addEventListener('click',function(){
+var sec1ArrowDown = document.querySelector(".sec-1-scroll");
+sec1ArrowDown.addEventListener("click", function () {
   navBarDot[navBarFlag].classList.remove("navbar-selected");
-    navBarDot[1].classList.add("navbar-selected");
-    navBarFlag = 1;
-    sec[1].scrollIntoView();
-})
-
+  navBarDot[1].classList.add("navbar-selected");
+  navBarFlag = 1;
+  sec[1].scrollIntoView();
+});
 
 //第一页contract按钮和第五页submit按钮
-var submitButton = document.querySelector('.submit-work')
-var contractButton = document.querySelector('.header-rightPart');
-contractButton.addEventListener('click',function(){
-  location.href="contract.html"
-})
-submitButton.addEventListener('click',function(){
-  location.href="contract.html"
-})
-
+var submitButton = document.querySelector(".submit-work");
+var contractButton = document.querySelector(".header-rightPart");
+contractButton.addEventListener("click", function () {
+  location.href = "contract.html";
+});
+submitButton.addEventListener("click", function () {
+  location.href = "contract.html";
+});
 
 //设置开场动画消失并提高左侧导航栏优先级
-setTimeout(function(){
+setTimeout(function () {
   document.querySelector(".navbar").style.zIndex = 10001;
-},1000)
-setTimeout(function(){
-  document.querySelector('.transition_start').style.display = 'none';
-},1600)
-
+}, 1000);
+setTimeout(function () {
+  document.querySelector(".transition_start").style.display = "none";
+}, 1600);
 
 // console.log(getElementTop(sec[5]));
 
 window.addEventListener("scroll", function () {
-  var contractAnimation = document.querySelector('.header-rightPart');
-  var headerAnimation = document.querySelector('.header');
-  if(window.scrollY>0){
-    contractAnimation.style.color = ' rgb(250, 242, 242)'
-    headerAnimation.style.transform = 'translateY(0)';
-  }
-  else {
-    contractAnimation.style.color = 'rgba(47, 255, 175, 0.582) '
-    headerAnimation.style.transform = 'translateY(-65px)';
+  var contractAnimation = document.querySelector(".header-rightPart");
+  var headerAnimation = document.querySelector(".header");
+  if (window.scrollY > 0) {
+    contractAnimation.style.color = " rgb(250, 242, 242)";
+    headerAnimation.style.transform = "translateY(0)";
+  } else {
+    contractAnimation.style.color = "rgba(47, 255, 175, 0.582) ";
+    headerAnimation.style.transform = "translateY(-65px)";
   }
 
   if (clickFlag === 1) return false;
@@ -171,18 +165,11 @@ window.addEventListener("scroll", function () {
 });
 
 
-
-//page2.js
-
-//page3.js
-
-//page4.js
-
 // page4.js
 window.onload = function () {
   var z = 0;
-  var hengx=0;
-  var lastx=0;
+  var hengx = 0;
+  var lastx = 0;
   function mouseup() {
     alert("qq");
   }
@@ -190,36 +177,34 @@ window.onload = function () {
   var isdown = 1;
   var p2 = document.getElementsByClassName("phto1")[0];
   app.onmousedown = function (e) {
-    hengx=e.pageX;
-    app.style.cursor="grabbing";
-    isdown=1;
-    window.onmousemove=function(a){
-        if(isdown){
-            // p2.style.transition=1+"s";
-            var left =a.pageX;
-            var px=(left-hengx)*0.1;
-           p2.style.marginLeft= lastx+px+"vw";
-            if((lastx+px)<=-520){
-                p2.style.transition=0+"s";
-                p2.style.marginLeft= 0+"vw";
-                lastx=0;
-            }
-            else{
-                p2.style.transition=1+"s";
-            }
-            if((lastx+px)>=100){
-                lastx=0;
-            }
-            console.log(lastx+px);
-       window.onmouseup=function(a){
-           isdown=0;
-           app.style.cursor="grab";
-           lastx+=px;
-           console.log("1")             
-       }
-    }
-}
-   
+    hengx = e.pageX;
+    app.style.cursor = "grabbing";
+    isdown = 1;
+    window.onmousemove = function (a) {
+      if (isdown) {
+        // p2.style.transition=1+"s";
+        var left = a.pageX;
+        var px = (left - hengx) * 0.1;
+        p2.style.marginLeft = lastx + px + "vw";
+        if (lastx + px <= -520) {
+          p2.style.transition = 0 + "s";
+          p2.style.marginLeft = 0 + "vw";
+          lastx = 0;
+        } else {
+          p2.style.transition = 1 + "s";
+        }
+        if (lastx + px >= 100) {
+          lastx = 0;
+        }
+        console.log(lastx + px);
+        window.onmouseup = function (a) {
+          isdown = 0;
+          app.style.cursor = "grab";
+          lastx += px;
+          console.log("1");
+        };
+      }
+    };
   };
 };
 
@@ -263,7 +248,7 @@ function getDistanceSpecifiedTime() {
   var m = Math.floor((t / 1000 / 60) % 60);
   var s = Math.floor((t / 1000) % 60);
 
-//   endNumber = d;
+  //   endNumber = d;
   document.querySelector("#hour").innerHTML = h;
   document.querySelector("#min").innerHTML = m;
   document.querySelector("#sec").innerHTML = s;
@@ -307,58 +292,127 @@ function scroll(index, scrollBox, maxLength, gapTime, circle, stopNum, timer) {
 }
 
 function startAnimation() {
-    numberList.forEach((scrollBox, index) => {
-        const childrenLen = scrollBox.children.length;
-        const circle = Math.pow(2, index);
-        const gapTime = baseTime / circle;
-        const stopNum = +endNumberList[index];
-        const timer = setInterval(() => { scroll(
-            index, 
-            scrollBox, 
-            childrenLen, 
-            gapTime,
-            circle,
-            stopNum,
-            timer
-        )}, gapTime);
-    })
+  numberList.forEach((scrollBox, index) => {
+    const childrenLen = scrollBox.children.length;
+    const circle = Math.pow(2, index);
+    const gapTime = baseTime / circle;
+    const stopNum = +endNumberList[index];
+    const timer = setInterval(() => {
+      scroll(index, scrollBox, childrenLen, gapTime, circle, stopNum, timer);
+    }, gapTime);
+  });
 }
-
-
 
 //页面浮现动画
- 
+
 var numberBoxFlag = true;
 
-
-var flowUp = {
-  reset: true,
-  opacity: 0,
-  distance: '60px',
-  origin: 'bottom',
-  duration: 4000,
-  delay: 500
-}
-
+// 第一页动画
 ScrollReveal().reveal("#sec-1-text1", {
-  // reset: true,
-  // opacity: 0,
-  distance: '60px',
-  origin: 'bottom',
-  duration: 4000,
-  delay: 500
-});
-ScrollReveal().reveal("#sec-1-text2", flowUp);
-ScrollReveal().reveal("#sec-1-text3", flowUp);
-ScrollReveal().reveal("#sec-1-text4", flowUp);
-
-ScrollReveal().reveal("#sec-1-text", {
-  distance: '60px',
-  origin: 'bottom',
   duration: 4000,
   delay: 500,
-  interval: 500
 });
+
+ScrollReveal().reveal("#sec-1-text2", {
+  distance: "60px",
+  origin: "right",
+  duration: 4000,
+  delay: 1000,
+});
+
+ScrollReveal().reveal("#sec-1-text3", {
+  duration: 4000,
+  delay: 1500,
+});
+
+ScrollReveal().reveal("#sec-1-text4", {
+  duration: 4000,
+  delay: 1500,
+});
+
+// 第二页动画
+
+ScrollReveal().reveal(".sec-2-text1", {
+  duration: 4000,
+  easing: 'cubic-bezier(.41,.55,.83,.67)',
+  reset: true,
+  // opacity: 0
+});
+
+
+ScrollReveal().reveal(".sec-2-text2-1", {
+  duration: 2000,
+  easing: 'cubic-bezier(.42,.12,.14,1.01)',
+  origin: "left",
+  distance: '160px',
+});
+
+ScrollReveal().reveal(".sec-2-text2-2", {
+  duration: 2000,
+  easing: 'cubic-bezier(.42,.12,.14,1.01)',
+  origin: "right",
+  distance: '160px',
+});
+
+//后三个页面
+
+ScrollReveal().reveal(".container-small-start", {
+  distance: '60px',
+  origin: 'top',
+  duration: 4000,
+  // delay: 500,
+  interval: 500,
+  reset: true,
+});
+ScrollReveal().reveal(".desc-2", {
+  distance: '60px',
+  origin: 'top',
+  duration: 4000,
+  // delay: 300,
+  interval: 500,
+  reset: true,
+});
+ScrollReveal().reveal(".experience-item2", {
+  distance: '150px',
+  origin: 'left',
+  duration: 4000,
+  // delay: 200,
+  interval: 500,
+  reset: true,
+});
+ScrollReveal().reveal(".experience-item1", {
+  distance: '350px',
+  origin: 'right',
+  duration: 4000,
+  // delay: 200,
+  interval: 500,
+  reset: true,
+});
+ScrollReveal().reveal(".yuer", {
+  distance: '150px',
+  origin: 'top',
+  duration: 4000,
+  // delay: 200,
+  interval: 300,
+  reset: true,
+});
+ScrollReveal().reveal(".sec-5-box-left-text", {
+  distance: '150px',
+  origin: 'left',
+  duration: 4000,
+  // delay: 200,
+  interval: 300,
+  reset: true,
+});
+ScrollReveal().reveal(".sec-5-box-right-text", {
+  distance: '250px',
+  origin: 'right',
+  duration: 4000,
+  // delay: 200,
+  interval: 300,
+  reset: true,
+});
+
 
 
 ScrollReveal().reveal(".container", {
