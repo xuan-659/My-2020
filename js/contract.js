@@ -64,3 +64,8 @@ var scrolly=pageYOffset;
             document.querySelector(".image-block").style.opacity=0;
         }
     });
+
+
+    setTimeout(function(){
+        document.querySelector('.transition_start').style.display = 'none';
+      },1600)
