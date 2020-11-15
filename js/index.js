@@ -108,7 +108,6 @@ for (let i = 0; i < 6; i++) {
 }
 //第一页向下箭头
 var sec1ArrowDown = document.querySelector('.sec-1-scroll');
-console.log(sec1ArrowDown);
 sec1ArrowDown.addEventListener('click',function(){
   navBarDot[navBarFlag].classList.remove("navbar-selected");
     navBarDot[1].classList.add("navbar-selected");
@@ -182,6 +181,8 @@ window.addEventListener("scroll", function () {
 // page4.js
 window.onload = function () {
   var z = 0;
+  var hengx=0;
+  var lastx=0;
   function mouseup() {
     alert("qq");
   }
@@ -189,40 +190,35 @@ window.onload = function () {
   var isdown = 1;
   var p2 = document.getElementsByClassName("phto1")[0];
   app.onmousedown = function (e) {
-    var x = e.pageX * 0.05;
-    app.style.cursor = "grabbing";
-    console.log(x);
-    if (x >= 25) {
-      z = z + x * 0.5;
-    }
-    if (x < 25) {
-      z = z - x * 2;
-    }
-    isdown = 1;
-    app.onmousemove = function (a) {
-      if (isdown) {
-        // p2.style.transition=1+"s";
-        var left = a.pageX;
-        var px = (x - left) * 0.001;
-        p2.style.marginLeft = -z + "vw";
-        console.log(z);
-        if (z >= 520) {
-          p2.style.transition = 0 + "s";
-          p2.style.marginLeft = 0 + "vw";
-          z = 0;
-        } else {
-          p2.style.transition = 1 + "s";
+    hengx=e.pageX;
+            app.style.cursor="grabbing";
+            isdown=1
+            app.onmousemove=function(a){
+                if(isdown){
+                    // p2.style.transition=1+"s";
+                    var left =a.pageX;
+                    var px=(left-hengx)*0.1;
+                   p2.style.marginLeft= lastx+px+"vw";
+                    console.log(z)
+                    if(z>=400){
+                        p2.style.transition=0+"s";
+                        p2.style.marginLeft= 0+"vw";
+                        z=0;
+                    }
+                    else{
+                        p2.style.transition=1+"s";
+                    }
+                    if(z<=-100){
+                        z=0;
+                    }
+                    console.log(p2.style.marginRight);
+               window.onmouseup=function(a){
+                   isdown=0;
+                   app.style.cursor="grab";
+                   lastx+=px;             
+               }
+            }
         }
-        if (z <= -50) {
-          p2.style.marginLeft = 0 + "vw";
-        }
-        // console.log(p2.style.marginRight);
-      }
-      window.onmouseup = function (a) {
-        isdown = 0;
-        app.style.cursor = "grab";
-      };
-    };
   };
 };
 
@@ -337,11 +333,32 @@ var numberBoxFlag = true;
 var flowUp = {
   reset: true,
   opacity: 0,
-  distance: '20px',
-  origin: 'bottom'
+  distance: '60px',
+  origin: 'bottom',
+  duration: 4000,
+  delay: 500
 }
 
-ScrollReveal().reveal("")
+ScrollReveal().reveal("#sec-1-text1", {
+  // reset: true,
+  // opacity: 0,
+  distance: '60px',
+  origin: 'bottom',
+  duration: 4000,
+  delay: 500
+});
+ScrollReveal().reveal("#sec-1-text2", flowUp);
+ScrollReveal().reveal("#sec-1-text3", flowUp);
+ScrollReveal().reveal("#sec-1-text4", flowUp);
+
+ScrollReveal().reveal("#sec-1-text", {
+  distance: '60px',
+  origin: 'bottom',
+  duration: 4000,
+  delay: 500,
+  interval: 500
+});
+
 
 ScrollReveal().reveal(".container", {
   reset: true,
