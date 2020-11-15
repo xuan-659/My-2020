@@ -31,9 +31,9 @@ function getElementTop(element) {
     scrolly=window.scrollY-sy;
     
          if(scrolly>=0)
-         {angle+=scrolly*0.08;}
+         {angle+=scrolly*0.09;}
          if(scrolly<0)
-         {angle+=scrolly*0.08;}
+         {angle+=scrolly*0.09;}
     
   if(angle > 180){
     // 这里的gap就是每次累加的值
@@ -191,34 +191,35 @@ window.onload = function () {
   var p2 = document.getElementsByClassName("phto1")[0];
   app.onmousedown = function (e) {
     hengx=e.pageX;
-            app.style.cursor="grabbing";
-            isdown=1
-            app.onmousemove=function(a){
-                if(isdown){
-                    // p2.style.transition=1+"s";
-                    var left =a.pageX;
-                    var px=(left-hengx)*0.1;
-                   p2.style.marginLeft= lastx+px+"vw";
-                    console.log(z)
-                    if(z>=400){
-                        p2.style.transition=0+"s";
-                        p2.style.marginLeft= 0+"vw";
-                        z=0;
-                    }
-                    else{
-                        p2.style.transition=1+"s";
-                    }
-                    if(z<=-100){
-                        z=0;
-                    }
-                    console.log(p2.style.marginRight);
-               window.onmouseup=function(a){
-                   isdown=0;
-                   app.style.cursor="grab";
-                   lastx+=px;             
-               }
+    app.style.cursor="grabbing";
+    isdown=1;
+    window.onmousemove=function(a){
+        if(isdown){
+            // p2.style.transition=1+"s";
+            var left =a.pageX;
+            var px=(left-hengx)*0.1;
+           p2.style.marginLeft= lastx+px+"vw";
+            if((lastx+px)<=-520){
+                p2.style.transition=0+"s";
+                p2.style.marginLeft= 0+"vw";
+                lastx=0;
             }
-        }
+            else{
+                p2.style.transition=1+"s";
+            }
+            if((lastx+px)>=100){
+                lastx=0;
+            }
+            console.log(lastx+px);
+       window.onmouseup=function(a){
+           isdown=0;
+           app.style.cursor="grab";
+           lastx+=px;
+           console.log("1")             
+       }
+    }
+}
+   
   };
 };
 
