@@ -8,8 +8,8 @@
   addListeners();
 
   function initHeader() {
-      width = window.innerWidth;
-      height = 5355;
+      width = window.clientWidth;
+      height = 7320;
     //   height = window.innerHeight;
       target = {x: width/2, y: height/2}
       largeHeader = document.getElementById('large-header');
@@ -97,7 +97,7 @@
   }
 
   function resize() {
-      width = window.innerWidth;
+      width = window.clientWidth;
       height = window.innerHeight;
       largeHeader.style.height = height+'px';
       canvas.width = width;

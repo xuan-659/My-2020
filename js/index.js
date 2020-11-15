@@ -31,7 +31,7 @@ function openingAnimation(){
  pp1.className="pass1 pp1";
  pp2.className="pass2 pp2";
  pp3.className="pass3 pp3";
-  pp4.className="pass4 pp4"
+ pp4.className="pass4 pp4";
 // var pp=getComputedStyle(pp1,null);
 //     ppp=parseInt(pp.marginTop)
 //   console.log(ppp); 
@@ -77,10 +77,10 @@ function getElementTop(element) {
     
   if(angle > 180){
     // 这里的gap就是每次累加的值
-    gap = angle - lastAngle
+    // gap = angle - lastAngle
   }
   if(angle <= 180){
-  // 右转左不转
+     // 右转左不转
     right.style.cssText = `transform: rotate(${-135 + angle}deg)`
   }else if(angle <= 180 + gap) {
     // 这里只会执行一次，设定的条件是 当前角度小于 180 + gap
@@ -261,7 +261,7 @@ function getDistanceSpecifiedTime() {
   var m = Math.floor((t / 1000 / 60) % 60);
   var s = Math.floor((t / 1000) % 60);
 
-  endNumber = "" + d;
+//   endNumber = d;
   document.querySelector("#hour").innerHTML = h;
   document.querySelector("#min").innerHTML = m;
   document.querySelector("#sec").innerHTML = s;
@@ -273,7 +273,7 @@ function getDay() {
   var NowTime = new Date();
   var t = EndTime.getTime() - NowTime.getTime();
   d = Math.floor(t / 1000 / 60 / 60 / 24);
-  endNumber = "" + d;
+  endNumber = d;
 }
 var numberBoxFlag = 0;
 
@@ -286,9 +286,8 @@ function scroll(index, scrollBox, maxLength, gapTime, circle, stopNum, timer) {
   var currentNumber = parseInt(scrollBox.children[currentStep].innerText);
   scrollBox.style.transform = `translate(0, -${currentStep * baseHeight}px)`;
   // console.log(currentCircle+'  '+circle )
-  // console.log(currentNumber);
   if (currentCircle === circle - 1 && currentNumber === stopNum) {
-    // console.log("啦啦啦");
+    console.log("啦啦啦");
     clearInterval(timer);
   }
   if (currentStep === maxLength - 1) {
@@ -310,7 +309,7 @@ function startAnimation() {
         const childrenLen = scrollBox.children.length;
         const circle = Math.pow(2, index);
         const gapTime = baseTime / circle;
-        const stopNum = endNumberList[index];
+        const stopNum = +endNumberList[index];
         const timer = setInterval(() => { scroll(
             index, 
             scrollBox, 
@@ -323,20 +322,18 @@ function startAnimation() {
     })
 }
 
+
 var numberBoxFlag = true;
 
-var floatUp = {
-  reset: true,
-  distance: '20px',
-  origin: 'bottom'
-}
 
 ScrollReveal().reveal(".container", {
   reset: true,
-  opacity: 1,
+  opacity: 0,
   delay: 0,
+  duration: 1000,
   afterReveal: function () {
     if (numberBoxFlag) {
+      console.log(3333);
       numberBoxFlag = false;
       init();
       startAnimation();
