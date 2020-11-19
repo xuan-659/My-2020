@@ -10,7 +10,7 @@ body {
   user-select: none;
 }
 
-.contract-box {
+.contact-box {
   display: flex;
   align-items: flex-start;
   background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%);
